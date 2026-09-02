@@ -1,13 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://sitemaps.org">
   
-  <!-- 1. Deine Hauptseite (Übersicht) -->
-  <url>
-    <loc>https://dietertepe.github.io/test-dreieck/</loc>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- 2. Testversion DT-ProfiDreieck -->
   <url>
     <loc>https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html</loc>
     <priority>0.8</priority>
