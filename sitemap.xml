@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
 <url>
-  <loc>http://www.dt-profidreieck.de/info.html</loc>
+  <loc>https://dietertepe.github.io/test-dreieck/</loc>
+  <changefreq>weekly</changefreq>
   <lastmod>2026-09-07</lastmod>
 </url>
 <url>
-  <loc>http://www.dt-profidreieck.de/datenschutz.html</loc>
-  <lastmod>2026-09-07</lastmod>
-</url>
-<url>
-  <loc>http://www.dt-profidreieck.de/impressum.html</loc>
-  <lastmod>2026-09-07</lastmod>
-</url>
-<url>
-  <loc>http://www.dt-profidreieck.de/index.html</loc>
+  <loc>https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html</loc>
+  <changefreq>weekly</changefreq>
   <lastmod>2026-09-07</lastmod>
 </url>
 </urlset>
