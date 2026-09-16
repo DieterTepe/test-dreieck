@@ -1,9 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://dt-profidreieck.de/</loc>
+    
+    <!-- Video 1 -->
+    <video:video>
+      <video:thumbnail_loc>https://dietertepe.github.io/dt-profidreieck-web/Dreieck_Daten/bilder/app-zeichnung.jpg</video:thumbnail_loc>
+      <video:title>DT-ProfiDreieck Werkstatt Anwendung</video:title>
+      <video:description>Winkelberechnung am Werkstück und DXF Export.</video:description>
+      <video:content_loc>https://dietertepe.github.io/dt-profidreieck-web/Dreieck_Daten/videos/V2.mp4</video:content_loc>
+    </video:video>
 
-<url>
-  <loc>https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html</loc>
-  <changefreq>weekly</changefreq>
-  <lastmod>2026-09-16</lastmod>
-</url>
+   <url>
+      <loc>https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html</loc>
+      <lastmod>2026-09-16</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
 </urlset>
