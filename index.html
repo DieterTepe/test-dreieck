@@ -127,7 +127,7 @@
       border-radius: 24px; background: linear-gradient(145deg, rgba(31,51,66,.94), rgba(16,25,35,.92));
       box-shadow: 0 30px 80px rgba(0,0,0,.2);
     }
-    .diagram svg { display: block; width: 100%; height: auto; }
+    .diagram img { display: block; width: 100%; height: auto; border-radius: 14px; }
     .diagram-caption { padding: 10px 8px 2px; color: var(--muted); font-size: .88rem; text-align: center; }
     .trust-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 42px; }
     .trust { border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.035); padding: 15px 17px; }
@@ -198,34 +198,12 @@
             <p class="micro">Direkt im Browser · Keine Anmeldung · Keine Installation</p>
           </div>
           <div class="diagram">
-            <svg viewBox="0 0 480 340" role="img" aria-labelledby="triangle-title triangle-desc">
-              <title id="triangle-title">Dreieck mit Seiten, Winkeln, Höhe und Umkreis</title>
-              <desc id="triangle-desc">Geometrische Illustration eines Dreiecks mit den Seiten a, b und c, den Winkeln Alpha, Beta und Gamma, der Höhe und dem Umkreis.</desc>
-              <defs>
-                <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#9bb8c8" stroke-opacity=".12" stroke-width="1"/>
-                </pattern>
-                <linearGradient id="triFill" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#42d2df" stop-opacity=".20"/>
-                  <stop offset="1" stop-color="#42d2df" stop-opacity=".025"/>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="0" width="480" height="340" rx="15" fill="url(#grid)"/>
-              <circle cx="239" cy="169" r="137" fill="none" stroke="#f0c36a" stroke-width="1.6" stroke-dasharray="5 6" opacity=".9"/>
-              <path d="M82 276 L366 276 L217 47 Z" fill="url(#triFill)" stroke="#42d2df" stroke-width="3" stroke-linejoin="round"/>
-              <path d="M217 47 L217 276" stroke="#f0c36a" stroke-width="1.8" stroke-dasharray="5 5"/>
-              <path d="M217 263 L230 263 L230 276" fill="none" stroke="#f0c36a" stroke-width="1.5"/>
-              <circle cx="82" cy="276" r="4" fill="#f2f7fb"/><circle cx="366" cy="276" r="4" fill="#f2f7fb"/><circle cx="217" cy="47" r="4" fill="#f2f7fb"/>
-              <g fill="#f2f7fb" font-family="system-ui, sans-serif" font-size="15" font-weight="700">
-                <text x="64" y="295">A</text><text x="373" y="295">B</text><text x="211" y="32">C</text>
-                <text x="140" y="153" fill="#42d2df">b</text><text x="304" y="153" fill="#42d2df">a</text>
-                <text x="219" y="300" fill="#42d2df">c</text>
-                <text x="232" y="190" fill="#f0c36a">h</text>
-                <text x="111" y="263" fill="#f0c36a">α</text><text x="333" y="263" fill="#f0c36a">β</text><text x="217" y="78" fill="#f0c36a">γ</text>
-              </g>
-              <circle cx="239" cy="169" r="4" fill="#f0c36a"/>
-              <text x="250" y="163" fill="#f0c36a" font-family="system-ui, sans-serif" font-size="12">O</text>
-            </svg>
+            <picture>
+              <source srcset="dreieck-berechnen.webp" type="image/webp">
+              <img src="dreieck-berechnen.jpg" width="700" height="570" fetchpriority="high" decoding="async"
+                   alt="Dreieck mit Seiten a, b und c, Winkeln Alpha, Beta und Gamma, Höhen, Umkreis, Inkreis, Feuerbachkreis und Euler-Gerade – Zeichnung aus DT-ProfiDreieck"
+                   title="Dreieck berechnen: Seiten, Winkel, Höhen und Kreise in DT-ProfiDreieck">
+            </picture>
             <div class="diagram-caption">Seiten · Winkel · Höhe · Umkreis – Geometrie auf einen Blick</div>
           </div>
         </div>
