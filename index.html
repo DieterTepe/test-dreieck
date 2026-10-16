@@ -1,692 +1,363 @@
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
-<meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="robots" content="index,follow,max-image-preview:large">
-
-<meta name="bingbot" content="index,follow">
-
-<meta name="theme-color" content="#101923">
-
-​<title>Dreieck berechnen online – DT-ProfiDreieck | Dreiecksrechner</title>
-
-<meta name="description" content="Dreieck online berechnen: DT-ProfiDreieck ermittelt Seiten, Winkel, Fläche, Höhen sowie Inkreis und Umkreis aus drei bekannten Größen. Mit Zeichnung und nachvollziehbarem Rechenweg – direkt im Browser testen.">
-
-<meta name="author" content="Dieter Tepe">
-
-<meta name="keywords" content="Dreieck berechnen, Dreiecksberechnung, Dreiecksrechner, Dreieck Rechner, Dreiecksberechnung online, Seiten berechnen, Winkel berechnen, Dreiecksfläche, Sinussatz, Kosinussatz, Umkreis, Inkreis, Dreieck Geometrie">
-
-​<link rel="canonical" href="https://dietertepe.github.io/test-dreieck/">
-
-<link rel="alternate" hreflang="de" href="https://dietertepe.github.io/test-dreieck/">
-
-<link rel="alternate" hreflang="x-default" href="https://dietertepe.github.io/test-dreieck/">
-
-​<meta property="og:type" content="website">
-
-<meta property="og:locale" content="de_DE">
-
-<meta property="og:site_name" content="DT-ProfiDreieck">
-
-<meta property="og:title" content="Dreieck berechnen online – DT-ProfiDreieck">
-
-<meta property="og:description" content="Drei bekannte Größen eingeben, die übrigen Dreieckswerte berechnen und das Ergebnis maßstäblich ansehen. Jetzt die Testversion im Browser starten.">
-
-<meta property="og:url" content="https://dietertepe.github.io/test-dreieck/">
-
-<meta name="twitter:card" content="summary">
-
-​<script type="application/ld+json">
-
-{
-
-"@context": "https://schema.org",
-
-"@graph": [
-
-{
-
-"@type": "WebSite",
-
-"@id": "https://dietertepe.github.io/test-dreieck/#website",
-
-"url": "https://dietertepe.github.io/test-dreieck/",
-
-"name": "DT-ProfiDreieck",
-
-"inLanguage": "de"
-
-},
-
-{
-
-"@type": "WebPage",
-
-"@id": "https://dietertepe.github.io/test-dreieck/#webpage",
-
-"url": "https://dietertepe.github.io/test-dreieck/",
-
-"name": "Dreieck berechnen online – DT-ProfiDreieck",
-
-"description": "Online-Dreiecksberechnung aus drei bekannten Größen mit Zeichnung und nachvollziehbarem Rechenweg.",
-
-"isPartOf": {"@id": "https://dietertepe.github.io/test-dreieck/#website"},
-
-"inLanguage": "de",
-
-"mainEntity": {"@id": "https://dietertepe.github.io/test-dreieck/#software"}
-
-},
-
-{
-
-"@type": "SoftwareApplication",
-
-"@id": "https://dietertepe.github.io/test-dreieck/#software",
-
-"name": "DT-ProfiDreieck",
-
-"applicationCategory": "EducationalApplication",
-
-"applicationSubCategory": "Dreiecksrechner und Geometrie-Berechnungssoftware",
-
-"operatingSystem": "Jeder moderne Webbrowser",
-
-"browserRequirements": "JavaScript muss aktiviert sein",
-
-"url": "https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html",
-
-"description": "Dreiecksberechnung aus drei bekannten Größen. Berechnet Seiten, Winkel, Fläche, Höhen sowie Inkreis- und Umkreiswerte und stellt das Dreieck grafisch dar.",
-
-"inLanguage": ["de", "en", "pt"],
-
-"author": {"@type": "Person", "name": "Dieter Tepe"}
-
-}
-
-]
-
-}
-
-</script>
-
-​<style>
-
-:root {
-
-color-scheme: dark;
-
---bg: #101923;
-
---panel: #172431;
-
---panel2: #1c2c3a;
-
---text: #f2f7fb;
-
---muted: #b4c4d1;
-
---cyan: #42d2df;
-
---cyan-dark: #087d8b;
-
---gold: #f0c36a;
-
---line: rgba(202, 222, 237, .16);
-
---max: 1120px;
-
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-
-margin: 0;
-
-font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-
-color: var(--text);
-
-background:
-
-radial-gradient(ellipse at 85% 0%, rgba(66,210,223,.13), transparent 35rem),
-
-linear-gradient(180deg, #14212e 0%, var(--bg) 55%);
-
-line-height: 1.65;
-
-}
-
-a { color: inherit; }
-
-.wrap { width: min(calc(100% - 36px), var(--max)); margin-inline: auto; }
-
-.topline { border-bottom: 1px solid var(--line); }
-
-.nav {
-
-min-height: 70px; display: flex; align-items: center; justify-content: space-between;
-
-gap: 20px; padding-block: 12px;
-
-}
-
-.brand { font-weight: 850; letter-spacing: -.04em; font-size: 1.22rem; }
-
-.brand span { color: var(--cyan); }
-
-.nav-note { color: var(--muted); font-size: .9rem; }
-
-.hero { padding: clamp(48px, 8vw, 94px) 0 60px; }
-
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(28px, 6vw, 70px); align-items: center; }
-
-.eyebrow {
-
-display: inline-flex; align-items: center; gap: 9px; color: var(--gold);
-
-font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-
-}
-
-h1 { margin: 14px 0 18px; max-width: 760px; font-size: clamp(2.35rem, 5.2vw, 4.6rem); line-height: 1.04; letter-spacing: -.055em; }
-
-h1 em { color: var(--cyan); font-style: normal; }
-
-.lead { max-width: 680px; color: #d0dce5; font-size: clamp(1.08rem, 1.8vw, 1.25rem); }
-
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-
-.button {
-
-display: inline-flex; justify-content: center; align-items: center; gap: 10px;
-
-min-height: 50px; padding: 13px 20px; border-radius: 12px; text-decoration: none;
-
-font-weight: 800; border: 1px solid transparent; transition: transform .15s, background .15s;
-
-}
-
-.button:hover { transform: translateY(-2px); }
-
-.primary { color: #062128; background: linear-gradient(135deg, #61e3e9, #31bdce); box-shadow: 0 12px 32px rgba(29, 186, 203, .18); }
-
-.secondary { background: rgba(255,255,255,.04); border-color: var(--line); }
-
-.micro { margin-top: 14px; color: var(--muted); font-size: .88rem; }
-
-.diagram {
-
-position: relative; padding: 18px; border: 1px solid rgba(117, 210, 223, .25);
-
-border-radius: 24px; background: linear-gradient(145deg, rgba(31,51,66,.94), rgba(16,25,35,.92));
-
-box-shadow: 0 30px 80px rgba(0,0,0,.2);
-
-}
-
-.diagram svg { display: block; width: 100%; height: auto; }
-
-.diagram-caption { padding: 10px 8px 2px; color: var(--muted); font-size: .88rem; text-align: center; }
-
-.trust-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 42px; }
-
-.trust { border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.035); padding: 15px 17px; }
-
-.trust strong { display: block; color: var(--cyan); font-size: 1rem; }
-
-.trust span { color: var(--muted); font-size: .86rem; }
-
-section.content { padding: 62px 0; border-top: 1px solid var(--line); }
-
-.section-head { max-width: 760px; margin-bottom: 28px; }
-
-h2 { margin: 0 0 12px; font-size: clamp(1.8rem, 3.5vw, 2.65rem); line-height: 1.15; letter-spacing: -.035em; }
-
-h3 { margin: 0 0 8px; font-size: 1.12rem; }
-
-p { margin: 0 0 14px; }
-
-.muted { color: var(--muted); }
-
-.feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-
-.feature { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(160deg, rgba(28,44,58,.85), rgba(20,31,43,.78)); }
-
-.feature-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: rgba(66,210,223,.12); color: var(--cyan); font-size: 1.35rem; margin-bottom: 16px; }
-
-.feature p { color: var(--muted); font-size: .96rem; margin: 0; }
-
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: start; }
-
-.checklist { list-style: none; padding: 0; margin: 18px 0 0; }
-
-.checklist li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px solid rgba(202,222,237,.09); }
-
-.checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
-
-.formula-box { border: 1px solid var(--line); background: rgba(255,255,255,.035); padding: 24px; border-radius: 18px; }
-
-.formula { font-family: "Cambria Math", "Times New Roman", serif; font-size: clamp(1.3rem, 3vw, 2rem); color: var(--gold); margin: 10px 0; }
-
-.faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-details { border: 1px solid var(--line); border-radius: 14px; padding: 17px 19px; background: rgba(255,255,255,.025); }
-
-summary { cursor: pointer; font-weight: 800; }
-
-details p { margin: 12px 0 0; color: var(--muted); }
-
-.closing { padding: 34px; border-radius: 22px; border: 1px solid rgba(66,210,223,.28); background: linear-gradient(120deg, rgba(66,210,223,.11), rgba(240,195,106,.06)); text-align: center; }
-
-.closing p { color: var(--muted); max-width: 700px; margin: 0 auto 20px; }
-
-footer { border-top: 1px solid var(--line); padding: 24px 0 38px; color: var(--muted); font-size: .88rem; }
-
-footer .footrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-
-footer a { color: var(--cyan); }
-
-@media (max-width: 780px) {
-
-.hero-grid, .split { grid-template-columns: 1fr; }
-
-.diagram { max-width: 560px; margin-inline: auto; }
-
-.feature-grid { grid-template-columns: 1fr 1fr; }
-
-.faq { grid-template-columns: 1fr; }
-
-}
-
-@media (max-width: 520px) {
-
-.wrap { width: min(calc(100% - 28px), var(--max)); }
-
-.nav { align-items: flex-start; flex-direction: column; gap: 2px; }
-
-.hero { padding-top: 42px; }
-
-.trust-row, .feature-grid { grid-template-columns: 1fr; }
-
-.button { width: 100%; }
-
-.closing { padding: 25px 18px; }
-
-}
-
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
-
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#101923">
+
+  <title>Dreieck berechnen online – DT-ProfiDreieck | Dreiecksrechner</title>
+  <meta name="description" content="Dreieck online berechnen: DT-ProfiDreieck ermittelt Seiten, Winkel, Fläche, Höhen sowie Inkreis und Umkreis aus drei bekannten Größen. Mit Zeichnung und nachvollziehbarem Rechenweg – direkt im Browser testen.">
+  <meta name="author" content="Dieter Tepe">
+  <meta name="keywords" content="Dreieck berechnen, Dreiecksberechnung, Dreiecksrechner, Dreieck Rechner, Dreiecksberechnung online, Seiten berechnen, Winkel berechnen, Dreiecksfläche, Sinussatz, Kosinussatz, Umkreis, Inkreis, Dreieck Geometrie">
+
+  <link rel="canonical" href="https://dt-profidreieck.de/">
+  <link rel="alternate" hreflang="de" href="https://dt-profidreieck.de/">
+  <link rel="alternate" hreflang="x-default" href="https://dt-profidreieck.de/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="DT-ProfiDreieck">
+  <meta property="og:title" content="Dreieck berechnen online – DT-ProfiDreieck">
+  <meta property="og:description" content="Drei bekannte Größen eingeben, die übrigen Dreieckswerte berechnen und das Ergebnis maßstäblich ansehen. Jetzt die Testversion im Browser starten.">
+  <meta property="og:url" content="https://dt-profidreieck.de/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dt-profidreieck.de/#website",
+        "url": "https://dt-profidreieck.de/",
+        "name": "DT-ProfiDreieck",
+        "inLanguage": "de"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://dt-profidreieck.de/#webpage",
+        "url": "https://dt-profidreieck.de/",
+        "name": "Dreieck berechnen online – DT-ProfiDreieck",
+        "description": "Online-Dreiecksberechnung aus drei bekannten Größen mit Zeichnung und nachvollziehbarem Rechenweg.",
+        "isPartOf": {"@id": "https://dt-profidreieck.de/#website"},
+        "inLanguage": "de",
+        "mainEntity": {"@id": "https://dt-profidreieck.de/#software"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://dt-profidreieck.de/#software",
+        "name": "DT-ProfiDreieck",
+        "applicationCategory": "EducationalApplication",
+        "applicationSubCategory": "Dreiecksrechner und Geometrie-Berechnungssoftware",
+        "operatingSystem": "Jeder moderne Webbrowser",
+        "browserRequirements": "JavaScript muss aktiviert sein",
+        "url": "https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html",
+        "description": "Dreiecksberechnung aus drei bekannten Größen. Berechnet Seiten, Winkel, Fläche, Höhen sowie Inkreis- und Umkreiswerte und stellt das Dreieck grafisch dar.",
+        "inLanguage": ["de", "en", "pt"],
+        "author": {"@type": "Person", "name": "Dieter Tepe"},
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101923;
+      --panel: #172431;
+      --panel2: #1c2c3a;
+      --text: #f2f7fb;
+      --muted: #b4c4d1;
+      --cyan: #42d2df;
+      --cyan-dark: #087d8b;
+      --gold: #f0c36a;
+      --line: rgba(202, 222, 237, .16);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(66,210,223,.13), transparent 35rem),
+        linear-gradient(180deg, #14212e 0%, var(--bg) 55%);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 36px), var(--max)); margin-inline: auto; }
+    .topline { border-bottom: 1px solid var(--line); }
+    .nav {
+      min-height: 70px; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding-block: 12px;
+    }
+    .brand { font-weight: 850; letter-spacing: -.04em; font-size: 1.22rem; }
+    .brand span { color: var(--cyan); }
+    .nav-note { color: var(--muted); font-size: .9rem; }
+    .hero { padding: clamp(48px, 8vw, 94px) 0 60px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(28px, 6vw, 70px); align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; color: var(--gold);
+      font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    h1 { margin: 14px 0 18px; max-width: 760px; font-size: clamp(2.35rem, 5.2vw, 4.6rem); line-height: 1.04; letter-spacing: -.055em; }
+    h1 em { color: var(--cyan); font-style: normal; }
+    .lead { max-width: 680px; color: #d0dce5; font-size: clamp(1.08rem, 1.8vw, 1.25rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+      min-height: 50px; padding: 13px 20px; border-radius: 12px; text-decoration: none;
+      font-weight: 800; border: 1px solid transparent; transition: transform .15s, background .15s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .primary { color: #062128; background: linear-gradient(135deg, #61e3e9, #31bdce); box-shadow: 0 12px 32px rgba(29, 186, 203, .18); }
+    .secondary { background: rgba(255,255,255,.04); border-color: var(--line); }
+    .micro { margin-top: 14px; color: var(--muted); font-size: .88rem; }
+    .diagram {
+      position: relative; padding: 18px; border: 1px solid rgba(117, 210, 223, .25);
+      border-radius: 24px; background: linear-gradient(145deg, rgba(31,51,66,.94), rgba(16,25,35,.92));
+      box-shadow: 0 30px 80px rgba(0,0,0,.2);
+    }
+    .diagram svg { display: block; width: 100%; height: auto; }
+    .diagram-caption { padding: 10px 8px 2px; color: var(--muted); font-size: .88rem; text-align: center; }
+    .trust-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 42px; }
+    .trust { border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.035); padding: 15px 17px; }
+    .trust strong { display: block; color: var(--cyan); font-size: 1rem; }
+    .trust span { color: var(--muted); font-size: .86rem; }
+    section.content { padding: 62px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 760px; margin-bottom: 28px; }
+    h2 { margin: 0 0 12px; font-size: clamp(1.8rem, 3.5vw, 2.65rem); line-height: 1.15; letter-spacing: -.035em; }
+    h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .feature { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(160deg, rgba(28,44,58,.85), rgba(20,31,43,.78)); }
+    .feature-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: rgba(66,210,223,.12); color: var(--cyan); font-size: 1.35rem; margin-bottom: 16px; }
+    .feature p { color: var(--muted); font-size: .96rem; margin: 0; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: start; }
+    .checklist { list-style: none; padding: 0; margin: 18px 0 0; }
+    .checklist li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px solid rgba(202,222,237,.09); }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
+    .formula-box { border: 1px solid var(--line); background: rgba(255,255,255,.035); padding: 24px; border-radius: 18px; }
+    .formula { font-family: "Cambria Math", "Times New Roman", serif; font-size: clamp(1.3rem, 3vw, 2rem); color: var(--gold); margin: 10px 0; }
+    .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    details { border: 1px solid var(--line); border-radius: 14px; padding: 17px 19px; background: rgba(255,255,255,.025); }
+    summary { cursor: pointer; font-weight: 800; }
+    details p { margin: 12px 0 0; color: var(--muted); }
+    .closing { padding: 34px; border-radius: 22px; border: 1px solid rgba(66,210,223,.28); background: linear-gradient(120deg, rgba(66,210,223,.11), rgba(240,195,106,.06)); text-align: center; }
+    .closing p { color: var(--muted); max-width: 700px; margin: 0 auto 20px; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 38px; color: var(--muted); font-size: .88rem; }
+    footer .footrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer a { color: var(--cyan); }
+    @media (max-width: 780px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .diagram { max-width: 560px; margin-inline: auto; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .faq { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .nav { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .hero { padding-top: 42px; }
+      .trust-row, .feature-grid { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .closing { padding: 25px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+  </style>
 </head>
-
 <body>
-
-<header class="topline">
-
-<div class="wrap nav">
-
-<div class="brand">DT-<span>Profi</span>Dreieck</div>
-
-<div class="nav-note">Dreiecksberechnung · Geometrie · Rechenweg</div>
-
-</div>
-
-</header>
-
-​<main>
-
-<section class="hero">
-
-<div class="wrap">
-
-<div class="hero-grid">
-
-<div>
-
-<div class="eyebrow">△ Präzise Geometrie im Browser</div>
-
-<h1>Dreieck <em>berechnen</em> – Werte verstehen, Form sehen.</h1>
-
-<p class="lead">Mit <strong>DT-ProfiDreieck</strong> berechnen Sie ein Dreieck aus drei bekannten Größen. Der Dreiecksrechner ermittelt die übrigen Seiten, Winkel, Fläche und weitere Geometriewerte und zeigt das Ergebnis als Zeichnung mit nachvollziehbarem Rechenweg.</p>
-
-<div class="actions">
-
-<a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" aria-label="DT-ProfiDreieck Testversion starten">Testversion jetzt starten <span aria-hidden="true">→</span></a>
-
-<a class="button secondary" href="#funktionen">Funktionen entdecken</a>
-
-</div>
-
-<p class="micro">Direkt im Browser · Keine Anmeldung · Keine Installation</p>
-
-</div>
-
-<div class="diagram">
-
-<svg viewBox="0 0 480 340" role="img" aria-labelledby="triangle-title triangle-desc">
-
-<title id="triangle-title">Dreieck mit Seiten, Winkeln, Höhe und Umkreis</title>
-
-<desc id="triangle-desc">Geometrische Illustration eines Dreiecks mit den Seiten a, b und c, den Winkeln Alpha, Beta und Gamma, der Höhe und dem Umkreis.</desc>
-
-<defs>
-
-<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-
-<path d="M 24 0 L 0 0 0 24" fill="none" stroke="#9bb8c8" stroke-opacity=".12" stroke-width="1"/>
-
-</pattern>
-
-<linearGradient id="triFill" x1="0" y1="0" x2="1" y2="1">
-
-<stop offset="0" stop-color="#42d2df" stop-opacity=".20"/>
-
-<stop offset="1" stop-color="#42d2df" stop-opacity=".025"/>
-
-</linearGradient>
-
-</defs>
-
-<rect x="0" y="0" width="480" height="340" rx="15" fill="url(#grid)"/>
-
-<circle cx="239" cy="169" r="137" fill="none" stroke="#f0c36a" stroke-width="1.6" stroke-dasharray="5 6" opacity=".9"/>
-
-<path d="M82 276 L366 276 L217 47 Z" fill="url(#triFill)" stroke="#42d2df" stroke-width="3" stroke-linejoin="round"/>
-
-<path d="M217 47 L217 276" stroke="#f0c36a" stroke-width="1.8" stroke-dasharray="5 5"/>
-
-<path d="M217 263 L230 263 L230 276" fill="none" stroke="#f0c36a" stroke-width="1.5"/>
-
-<circle cx="82" cy="276" r="4" fill="#f2f7fb"/><circle cx="366" cy="276" r="4" fill="#f2f7fb"/><circle cx="217" cy="47" r="4" fill="#f2f7fb"/>
-
-<g fill="#f2f7fb" font-family="system-ui, sans-serif" font-size="15" font-weight="700">
-
-<text x="64" y="295">A</text><text x="373" y="295">B</text><text x="211" y="32">C</text>
-
-<text x="140" y="153" fill="#42d2df">b</text><text x="304" y="153" fill="#42d2df">a</text>
-
-<text x="219" y="300" fill="#42d2df">c</text>
-
-<text x="232" y="190" fill="#f0c36a">h</text>
-
-<text x="111" y="263" fill="#f0c36a">α</text><text x="333" y="263" fill="#f0c36a">β</text><text x="217" y="78" fill="#f0c36a">γ</text>
-
-</g>
-
-<circle cx="239" cy="169" r="4" fill="#f0c36a"/>
-
-<text x="250" y="163" fill="#f0c36a" font-family="system-ui, sans-serif" font-size="12">O</text>
-
-</svg>
-
-<div class="diagram-caption">Seiten · Winkel · Höhe · Umkreis – Geometrie auf einen Blick</div>
-
-</div>
-
-</div>
-
-<div class="trust-row" aria-label="Wichtige Eigenschaften">
-
-<div class="trust"><strong>3 bekannte Größen</strong><span>als Ausgangspunkt für die Berechnung</span></div>
-
-<div class="trust"><strong>Rechenweg inklusive</strong><span>Formeln und eingesetzte Zahlen nachvollziehen</span></div>
-
-<div class="trust"><strong>Direkt im Browser</strong><span>ohne Installation und Benutzerkonto</span></div>
-
-</div>
-
-</div>
-
-</section>
-
-​<section class="content" id="funktionen">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="eyebrow">Funktionen</div>
-
-<h2>Mehr als ein einfacher Dreiecksrechner</h2>
-
-<p class="muted">Ob für Mathematikunterricht, Studium, technische Ausbildung oder Konstruktion: DT-ProfiDreieck unterstützt zahlreiche Aufgaben der ebenen Dreiecksgeometrie.</p>
-
-</div>
-
-<div class="feature-grid">
-
-<article class="feature">
-
-<div class="feature-icon" aria-hidden="true">△</div>
-
-<h3>Dreieck aus drei Größen berechnen</h3>
-
-<p>Seiten, Winkel, Umkreisradius, Inkreisradius, Fläche oder Höhen kombinieren. Die übrigen Werte werden daraus bestimmt.</p>
-
-</article>
-
-<article class="feature">
-
-<div class="feature-icon" aria-hidden="true">∠</div>
-
-<h3>Seiten und Winkel ermitteln</h3>
-
-<p>Typische Fälle wie SSS, SWS, WSW, SWW und SSW behandeln. Bei mehrdeutigen Eingaben können mehrere Lösungen angezeigt werden.</p>
-
-</article>
-
-<article class="feature">
-
-<div class="feature-icon" aria-hidden="true">⌁</div>
-
-<h3>Zeichnung und Geometrie</h3>
-
-<p>Das Dreieck maßstäblich ansehen, die Darstellung zoomen und geometrische Elemente wie Höhen, Mittelsenkrechten und Kreise einblenden.</p>
-
-</article>
-
-<article class="feature">
-
-<div class="feature-icon" aria-hidden="true">ƒ</div>
-
-<h3>Nachvollziehbarer Rechenweg</h3>
-
-<p>Formeln, eingesetzte Zahlen und Ergebnisse Schritt für Schritt nachvollziehen – hilfreich zum Lernen, Prüfen und Dokumentieren.</p>
-
-</article>
-
-<article class="feature">
-
-<div class="feature-icon" aria-hidden="true">✓</div>
-
-<h3>Plausibilitätsprüfungen</h3>
-
-<p>Unmögliche, widersprüchliche oder nicht eindeutig lösbare Eingabekombinationen werden erkannt und erläutert.</p>
-
-</article>
-
-<article class="feature">
-
-<div class="feature-icon" aria-hidden="true">◉</div>
-
-<h3>Für Schule, Studium und Praxis</h3>
-
-<p>Einsetzbar zum Üben mathematischer Zusammenhänge sowie für geometrische Aufgaben in Ausbildung, Werkstatt und Konstruktion.</p>
-
-</article>
-
-</div>
-
-</div>
-
-</section>
-
-​<section class="content">
-
-<div class="wrap split">
-
-<div>
-
-<div class="eyebrow">So funktioniert es</div>
-
-<h2>In wenigen Schritten zum berechneten Dreieck</h2>
-
-<p class="muted">Sie müssen nicht alle Maße kennen. Wählen Sie drei bekannte Größen aus und geben Sie die Werte ein. Die Anwendung berechnet die übrigen Größen und stellt das Dreieck grafisch dar.</p>
-
-<ul class="checklist">
-
-<li>Drei bekannte Größen auswählen, zum Beispiel zwei Seiten und einen Winkel.</li>
-
-<li>Werte eingeben und die gewünschte Längeneinheit wählen.</li>
-
-<li>„Dreieck berechnen“ anklicken.</li>
-
-<li>Ergebnisse, Zeichnung und den vollständigen Rechenweg prüfen.</li>
-
-</ul>
-
-</div>
-
-<aside class="formula-box">
-
-<h3>Beispiel: Dreiecksfläche berechnen</h3>
-
-<p class="muted">Sind Grundseite und zugehörige Höhe bekannt, lässt sich die Fläche eines Dreiecks so bestimmen:</p>
-
-<div class="formula">A = (g · h) / 2</div>
-
-<p class="muted">Der Rechenweg macht sichtbar, welche Werte in eine Formel eingesetzt werden und wie das Ergebnis entsteht.</p>
-
-<a href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" class="button secondary">Im Dreiecksrechner ausprobieren →</a>
-
-</aside>
-
-</div>
-
-</section>
-
-​<section class="content">
-
-<div class="wrap">
-
-<div class="section-head">
-
-<div class="eyebrow">Häufige Fragen</div>
-
-<h2>Fragen zur Online-Dreiecksberechnung</h2>
-
-</div>
-
-<div class="faq">
-
-<details>
-
-<summary>Wie kann ich ein Dreieck berechnen?</summary>
-
-<p>Wählen Sie drei bekannte Größen, zum Beispiel drei Seiten, zwei Seiten und einen Winkel oder eine Kombination mit Fläche, Höhe, Inkreis- oder Umkreisradius. DT-ProfiDreieck berechnet die weiteren Größen, sofern die Angaben eine Lösung bestimmen.</p>
-
-</details>
-
-<details>
-
-<summary>Welche Werte kann der Dreiecksrechner ermitteln?</summary>
-
-<p>Abhängig von den Eingaben berechnet die Anwendung unter anderem Seitenlängen, Innenwinkel, Umfang, Flächeninhalt, Höhen, Inkreisradius und Umkreisradius.</p>
-
-</details>
-
-<details>
-
-<summary>Zeigt DT-ProfiDreieck auch den Rechenweg?</summary>
-
-<p>Ja. In der Anwendung lässt sich der Rechenweg aufklappen. Er zeigt Formeln, eingesetzte Zahlen, Ergebnisse und erläuternde Hinweise.</p>
-
-</details>
-
-<details>
-
-<summary>Kann ich die Dreiecksberechnung kostenlos testen?</summary>
-
-<p>Ja. Die hier verlinkte Testversion kann direkt im Browser gestartet werden. Die Berechnungen sind in der Testversion nutzbar; bestimmte Speicher- und Ausgabe-Funktionen sind der Vollversion vorbehalten.</p>
-
-</details>
-
-<details>
-
-<summary>Muss ich etwas installieren oder mich anmelden?</summary>
-
-<p>Nein. Die Testversion wird direkt im Browser geöffnet. Eine Installation und ein Benutzerkonto sind dafür nicht erforderlich.</p>
-
-</details>
-
-<details>
-
-<summary>Funktioniert das Programm offline?</summary>
-
-<p>Die Berechnungen laufen auf dem eigenen Gerät im Browser. Nach dem Laden der HTML-Anwendung ist die Berechnung auch ohne aktive Internetverbindung möglich.</p>
-
-</details>
-
-</div>
-
-</div>
-
-</section>
-
-​<section class="content">
-
-<div class="wrap">
-
-<div class="closing">
-
-<div class="eyebrow">Jetzt selbst berechnen</div>
-
-<h2>Testen Sie DT-ProfiDreieck direkt im Browser</h2>
-
-<p>Geben Sie drei bekannte Größen ein, lassen Sie Ihr Dreieck berechnen und prüfen Sie Ergebnis, Zeichnung und Rechenweg selbst.</p>
-
-<a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html">DT-ProfiDreieck Testversion starten →</a>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-​<footer>
-
-<div class="wrap footrow">
-
-<span>© <span id="year">2026</span> Dieter Tepe · DT-ProfiDreieck</span>
-
-<span>Hinweis: Ergebnisse vor einer sicherheitskritischen oder verbindlichen Verwendung fachlich prüfen.</span>
-
-<a href="https://www.dt-profidreieck.de/">Zur Produktseite</a>
-
-</div>
-
-</footer>
-
-<script>
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-</script>
-
+  <header class="topline">
+    <div class="wrap nav">
+      <div class="brand">DT-<span>Profi</span>Dreieck</div>
+      <div class="nav-note">Dreiecksberechnung · Geometrie · Rechenweg</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">△ Präzise Geometrie im Browser</div>
+            <h1>Dreieck <em>berechnen</em> – Werte verstehen, Form sehen.</h1>
+            <p class="lead">Mit <strong>DT-ProfiDreieck</strong> berechnen Sie ein Dreieck aus drei bekannten Größen. Der Dreiecksrechner ermittelt die übrigen Seiten, Winkel, Fläche und weitere Geometriewerte und zeigt das Ergebnis als Zeichnung mit nachvollziehbarem Rechenweg.</p>
+            <div class="actions">
+              <a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" aria-label="DT-ProfiDreieck Testversion starten">Testversion jetzt starten <span aria-hidden="true">→</span></a>
+              <a class="button secondary" href="#funktionen">Funktionen entdecken</a>
+            </div>
+            <p class="micro">Direkt im Browser · Keine Anmeldung · Keine Installation</p>
+          </div>
+          <div class="diagram">
+            <svg viewBox="0 0 480 340" role="img" aria-labelledby="triangle-title triangle-desc">
+              <title id="triangle-title">Dreieck mit Seiten, Winkeln, Höhe und Umkreis</title>
+              <desc id="triangle-desc">Geometrische Illustration eines Dreiecks mit den Seiten a, b und c, den Winkeln Alpha, Beta und Gamma, der Höhe und dem Umkreis.</desc>
+              <defs>
+                <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                  <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#9bb8c8" stroke-opacity=".12" stroke-width="1"/>
+                </pattern>
+                <linearGradient id="triFill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#42d2df" stop-opacity=".20"/>
+                  <stop offset="1" stop-color="#42d2df" stop-opacity=".025"/>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="480" height="340" rx="15" fill="url(#grid)"/>
+              <circle cx="239" cy="169" r="137" fill="none" stroke="#f0c36a" stroke-width="1.6" stroke-dasharray="5 6" opacity=".9"/>
+              <path d="M82 276 L366 276 L217 47 Z" fill="url(#triFill)" stroke="#42d2df" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M217 47 L217 276" stroke="#f0c36a" stroke-width="1.8" stroke-dasharray="5 5"/>
+              <path d="M217 263 L230 263 L230 276" fill="none" stroke="#f0c36a" stroke-width="1.5"/>
+              <circle cx="82" cy="276" r="4" fill="#f2f7fb"/><circle cx="366" cy="276" r="4" fill="#f2f7fb"/><circle cx="217" cy="47" r="4" fill="#f2f7fb"/>
+              <g fill="#f2f7fb" font-family="system-ui, sans-serif" font-size="15" font-weight="700">
+                <text x="64" y="295">A</text><text x="373" y="295">B</text><text x="211" y="32">C</text>
+                <text x="140" y="153" fill="#42d2df">b</text><text x="304" y="153" fill="#42d2df">a</text>
+                <text x="219" y="300" fill="#42d2df">c</text>
+                <text x="232" y="190" fill="#f0c36a">h</text>
+                <text x="111" y="263" fill="#f0c36a">α</text><text x="333" y="263" fill="#f0c36a">β</text><text x="217" y="78" fill="#f0c36a">γ</text>
+              </g>
+              <circle cx="239" cy="169" r="4" fill="#f0c36a"/>
+              <text x="250" y="163" fill="#f0c36a" font-family="system-ui, sans-serif" font-size="12">O</text>
+            </svg>
+            <div class="diagram-caption">Seiten · Winkel · Höhe · Umkreis – Geometrie auf einen Blick</div>
+          </div>
+        </div>
+        <div class="trust-row" aria-label="Wichtige Eigenschaften">
+          <div class="trust"><strong>3 bekannte Größen</strong><span>als Ausgangspunkt für die Berechnung</span></div>
+          <div class="trust"><strong>Rechenweg inklusive</strong><span>Formeln und eingesetzte Zahlen nachvollziehen</span></div>
+          <div class="trust"><strong>Direkt im Browser</strong><span>ohne Installation und Benutzerkonto</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="funktionen">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Funktionen</div>
+          <h2>Mehr als ein einfacher Dreiecksrechner</h2>
+          <p class="muted">Ob für Mathematikunterricht, Studium, technische Ausbildung oder Konstruktion: DT-ProfiDreieck unterstützt zahlreiche Aufgaben der ebenen Dreiecksgeometrie.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">△</div>
+            <h3>Dreieck aus drei Größen berechnen</h3>
+            <p>Seiten, Winkel, Umkreisradius, Inkreisradius, Fläche oder Höhen kombinieren. Die übrigen Werte werden daraus bestimmt.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">∠</div>
+            <h3>Seiten und Winkel ermitteln</h3>
+            <p>Typische Fälle wie SSS, SWS, WSW, SWW und SSW behandeln. Bei mehrdeutigen Eingaben können mehrere Lösungen angezeigt werden.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">⌁</div>
+            <h3>Zeichnung und Geometrie</h3>
+            <p>Das Dreieck maßstäblich ansehen, die Darstellung zoomen und geometrische Elemente wie Höhen, Mittelsenkrechten und Kreise einblenden.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">ƒ</div>
+            <h3>Nachvollziehbarer Rechenweg</h3>
+            <p>Formeln, eingesetzte Zahlen und Ergebnisse Schritt für Schritt nachvollziehen – hilfreich zum Lernen, Prüfen und Dokumentieren.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">✓</div>
+            <h3>Plausibilitätsprüfungen</h3>
+            <p>Unmögliche, widersprüchliche oder nicht eindeutig lösbare Eingabekombinationen werden erkannt und erläutert.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">◉</div>
+            <h3>Für Schule, Studium und Praxis</h3>
+            <p>Einsetzbar zum Üben mathematischer Zusammenhänge sowie für geometrische Aufgaben in Ausbildung, Werkstatt und Konstruktion.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">So funktioniert es</div>
+          <h2>In wenigen Schritten zum berechneten Dreieck</h2>
+          <p class="muted">Sie müssen nicht alle Maße kennen. Wählen Sie drei bekannte Größen aus und geben Sie die Werte ein. Die Anwendung berechnet die übrigen Größen und stellt das Dreieck grafisch dar.</p>
+          <ul class="checklist">
+            <li>Drei bekannte Größen auswählen, zum Beispiel zwei Seiten und einen Winkel.</li>
+            <li>Werte eingeben und die gewünschte Längeneinheit wählen.</li>
+            <li>„Dreieck berechnen“ anklicken.</li>
+            <li>Ergebnisse, Zeichnung und den vollständigen Rechenweg prüfen.</li>
+          </ul>
+        </div>
+        <aside class="formula-box">
+          <h3>Beispiel: Dreiecksfläche berechnen</h3>
+          <p class="muted">Sind Grundseite und zugehörige Höhe bekannt, lässt sich die Fläche eines Dreiecks so bestimmen:</p>
+          <div class="formula">A = (g · h) / 2</div>
+          <p class="muted">Der Rechenweg macht sichtbar, welche Werte in eine Formel eingesetzt werden und wie das Ergebnis entsteht.</p>
+          <a href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" class="button secondary">Im Dreiecksrechner ausprobieren →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Häufige Fragen</div>
+          <h2>Fragen zur Online-Dreiecksberechnung</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Wie kann ich ein Dreieck berechnen?</summary>
+            <p>Wählen Sie drei bekannte Größen, zum Beispiel drei Seiten, zwei Seiten und einen Winkel oder eine Kombination mit Fläche, Höhe, Inkreis- oder Umkreisradius. DT-ProfiDreieck berechnet die weiteren Größen, sofern die Angaben eine Lösung bestimmen.</p>
+          </details>
+          <details>
+            <summary>Welche Werte kann der Dreiecksrechner ermitteln?</summary>
+            <p>Abhängig von den Eingaben berechnet die Anwendung unter anderem Seitenlängen, Innenwinkel, Umfang, Flächeninhalt, Höhen, Inkreisradius und Umkreisradius.</p>
+          </details>
+          <details>
+            <summary>Zeigt DT-ProfiDreieck auch den Rechenweg?</summary>
+            <p>Ja. In der Anwendung lässt sich der Rechenweg aufklappen. Er zeigt Formeln, eingesetzte Zahlen, Ergebnisse und erläuternde Hinweise.</p>
+          </details>
+          <details>
+            <summary>Kann ich die Dreiecksberechnung kostenlos testen?</summary>
+            <p>Ja. Die hier verlinkte Testversion kann direkt im Browser gestartet werden. Die Berechnungen sind in der Testversion nutzbar; bestimmte Speicher- und Ausgabe-Funktionen sind der Vollversion vorbehalten.</p>
+          </details>
+          <details>
+            <summary>Muss ich etwas installieren oder mich anmelden?</summary>
+            <p>Nein. Die Testversion wird direkt im Browser geöffnet. Eine Installation und ein Benutzerkonto sind dafür nicht erforderlich.</p>
+          </details>
+          <details>
+            <summary>Funktioniert das Programm offline?</summary>
+            <p>Die Berechnungen laufen auf dem eigenen Gerät im Browser. Nach dem Laden der HTML-Anwendung ist die Berechnung auch ohne aktive Internetverbindung möglich.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap">
+        <div class="closing">
+          <div class="eyebrow">Jetzt selbst berechnen</div>
+          <h2>Testen Sie DT-ProfiDreieck direkt im Browser</h2>
+          <p>Geben Sie drei bekannte Größen ein, lassen Sie Ihr Dreieck berechnen und prüfen Sie Ergebnis, Zeichnung und Rechenweg selbst.</p>
+          <a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html">DT-ProfiDreieck Testversion starten →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footrow">
+      <span>© <span id="year">2026</span> Dieter Tepe · DT-ProfiDreieck</span>
+      <span>Hinweis: Ergebnisse vor einer sicherheitskritischen oder verbindlichen Verwendung fachlich prüfen.</span>
+      <a href="https://dt-profidreieck.de/">Zur Produktseite</a>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
-
