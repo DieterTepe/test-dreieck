@@ -1,363 +1,638 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta name="theme-color" content="#101923">
 
-  <title>Dreieck berechnen online – DT-ProfiDreieck | Dreiecksrechner</title>
-  <meta name="description" content="Dreieck online berechnen: Ermittelt Seiten, Winkel, Fläche, Höhen & Kreise aus drei Angaben. Mit Zeichnung und Rechenweg im Browser testen.">
-  <meta name="author" content="Dieter Tepe">
-  <meta name="keywords" content="Dreieck berechnen, Dreiecksberechnung, Dreiecksrechner, Dreieck Rechner, Dreiecksberechnung online, Seiten berechnen, Winkel berechnen, Dreiecksfläche, Sinussatz, Kosinussatz, Umkreis, Inkreis, Dreieck Geometrie">
+<meta charset="utf-8">
 
-  <link rel="canonical" href="https://dietertepe.github.io/test-dreieck/">
-  <link rel="alternate" hreflang="de" href="https://dietertepe.github.io/test-dreieck/">
-  <link rel="alternate" hreflang="x-default" href="https://dietertepe.github.io/test-dreieck/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="de_DE">
-  <meta property="og:site_name" content="DT-ProfiDreieck">
-  <meta property="og:title" content="Dreieck berechnen online – DT-ProfiDreieck">
-  <meta property="og:description" content="Drei bekannte Größen eingeben, die übrigen Dreieckswerte berechnen und das Ergebnis maßstäblich ansehen. Jetzt die Testversion im Browser starten.">
-  <meta property="og:url" content="https://dietertepe.github.io/test-dreieck/">
-  <meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index,follow,max-image-preview:large">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://dietertepe.github.io/test-dreieck/#website",
-        "url": "https://dietertepe.github.io/test-dreieck/",
-        "name": "DT-ProfiDreieck",
-        "inLanguage": "de"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://dietertepe.github.io/test-dreieck/#webpage",
-        "url": "https://dietertepe.github.io/test-dreieck/",
-        "name": "Dreieck berechnen online – DT-ProfiDreieck",
-        "description": "Online-Dreiecksberechnung aus drei bekannten Größen mit Zeichnung und nachvollziehbarem Rechenweg.",
-        "isPartOf": {"@id": "https://dietertepe.github.io/test-dreieck/#website"},
-        "inLanguage": "de",
-        "mainEntity": {"@id": "https://dietertepe.github.io/test-dreieck/#software"}
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://dietertepe.github.io/test-dreieck/#software",
-        "name": "DT-ProfiDreieck",
-        "applicationCategory": "EducationalApplication",
-        "applicationSubCategory": "Dreiecksrechner und Geometrie-Berechnungssoftware",
-        "operatingSystem": "Jeder moderne Webbrowser",
-        "browserRequirements": "JavaScript muss aktiviert sein",
-        "url": "https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html",
-        "description": "Dreiecksberechnung aus drei bekannten Größen. Berechnet Seiten, Winkel, Fläche, Höhen sowie Inkreis- und Umkreiswerte und stellt das Dreieck grafisch dar.",
-        "inLanguage": ["de", "en", "pt"],
-        "author": {"@type": "Person", "name": "Dieter Tepe"},
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    ]
-  }
-  </script>
+<meta name="bingbot" content="index,follow">
 
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #101923;
-      --panel: #172431;
-      --panel2: #1c2c3a;
-      --text: #f2f7fb;
-      --muted: #b4c4d1;
-      --cyan: #42d2df;
-      --cyan-dark: #087d8b;
-      --gold: #f0c36a;
-      --line: rgba(202, 222, 237, .16);
-      --max: 1120px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(ellipse at 85% 0%, rgba(66,210,223,.13), transparent 35rem),
-        linear-gradient(180deg, #14212e 0%, var(--bg) 55%);
-      line-height: 1.65;
-    }
-    a { color: inherit; }
-    .wrap { width: min(calc(100% - 36px), var(--max)); margin-inline: auto; }
-    .topline { border-bottom: 1px solid var(--line); }
-    .nav {
-      min-height: 70px; display: flex; align-items: center; justify-content: space-between;
-      gap: 20px; padding-block: 12px;
-    }
-    .brand { font-weight: 850; letter-spacing: -.04em; font-size: 1.22rem; }
-    .brand span { color: var(--cyan); }
-    .nav-note { color: var(--muted); font-size: .9rem; }
-    .hero { padding: clamp(48px, 8vw, 94px) 0 60px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(28px, 6vw, 70px); align-items: center; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 9px; color: var(--gold);
-      font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-    }
-    h1 { margin: 14px 0 18px; max-width: 760px; font-size: clamp(2.35rem, 5.2vw, 4.6rem); line-height: 1.04; letter-spacing: -.055em; }
-    h1 em { color: var(--cyan); font-style: normal; }
-    .lead { max-width: 680px; color: #d0dce5; font-size: clamp(1.08rem, 1.8vw, 1.25rem); }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .button {
-      display: inline-flex; justify-content: center; align-items: center; gap: 10px;
-      min-height: 50px; padding: 13px 20px; border-radius: 12px; text-decoration: none;
-      font-weight: 800; border: 1px solid transparent; transition: transform .15s, background .15s;
-    }
-    .button:hover { transform: translateY(-2px); }
-    .primary { color: #062128; background: linear-gradient(135deg, #61e3e9, #31bdce); box-shadow: 0 12px 32px rgba(29, 186, 203, .18); }
-    .secondary { background: rgba(255,255,255,.04); border-color: var(--line); }
-    .micro { margin-top: 14px; color: var(--muted); font-size: .88rem; }
-    .diagram {
-      position: relative; padding: 18px; border: 1px solid rgba(117, 210, 223, .25);
-      border-radius: 24px; background: linear-gradient(145deg, rgba(31,51,66,.94), rgba(16,25,35,.92));
-      box-shadow: 0 30px 80px rgba(0,0,0,.2);
-    }
-    .diagram svg { display: block; width: 100%; height: auto; }
-    .diagram-caption { padding: 10px 8px 2px; color: var(--muted); font-size: .88rem; text-align: center; }
-    .trust-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 42px; }
-    .trust { border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.035); padding: 15px 17px; }
-    .trust strong { display: block; color: var(--cyan); font-size: 1rem; }
-    .trust span { color: var(--muted); font-size: .86rem; }
-    section.content { padding: 62px 0; border-top: 1px solid var(--line); }
-    .section-head { max-width: 760px; margin-bottom: 28px; }
-    h2 { margin: 0 0 12px; font-size: clamp(1.8rem, 3.5vw, 2.65rem); line-height: 1.15; letter-spacing: -.035em; }
-    h3 { margin: 0 0 8px; font-size: 1.12rem; }
-    p { margin: 0 0 14px; }
-    .muted { color: var(--muted); }
-    .feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-    .feature { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(160deg, rgba(28,44,58,.85), rgba(20,31,43,.78)); }
-    .feature-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: rgba(66,210,223,.12); color: var(--cyan); font-size: 1.35rem; margin-bottom: 16px; }
-    .feature p { color: var(--muted); font-size: .96rem; margin: 0; }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: start; }
-    .checklist { list-style: none; padding: 0; margin: 18px 0 0; }
-    .checklist li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px solid rgba(202,222,237,.09); }
-    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
-    .formula-box { border: 1px solid var(--line); background: rgba(255,255,255,.035); padding: 24px; border-radius: 18px; }
-    .formula { font-family: "Cambria Math", "Times New Roman", serif; font-size: clamp(1.3rem, 3vw, 2rem); color: var(--gold); margin: 10px 0; }
-    .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    details { border: 1px solid var(--line); border-radius: 14px; padding: 17px 19px; background: rgba(255,255,255,.025); }
-    summary { cursor: pointer; font-weight: 800; }
-    details p { margin: 12px 0 0; color: var(--muted); }
-    .closing { padding: 34px; border-radius: 22px; border: 1px solid rgba(66,210,223,.28); background: linear-gradient(120deg, rgba(66,210,223,.11), rgba(240,195,106,.06)); text-align: center; }
-    .closing p { color: var(--muted); max-width: 700px; margin: 0 auto 20px; }
-    footer { border-top: 1px solid var(--line); padding: 24px 0 38px; color: var(--muted); font-size: .88rem; }
-    footer .footrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-    footer a { color: var(--cyan); }
-    @media (max-width: 780px) {
-      .hero-grid, .split { grid-template-columns: 1fr; }
-      .diagram { max-width: 560px; margin-inline: auto; }
-      .feature-grid { grid-template-columns: 1fr 1fr; }
-      .faq { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 520px) {
-      .wrap { width: min(calc(100% - 28px), var(--max)); }
-      .nav { align-items: flex-start; flex-direction: column; gap: 2px; }
-      .hero { padding-top: 42px; }
-      .trust-row, .feature-grid { grid-template-columns: 1fr; }
-      .button { width: 100%; }
-      .closing { padding: 25px 18px; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
-  </style>
+<meta name="theme-color" content="#101923">
+
+​<title>Dreieck berechnen online – DT-ProfiDreieck | Dreiecksrechner</title>
+
+<meta name="description" content="Dreieck online berechnen: DT-ProfiDreieck ermittelt Seiten, Winkel, Fläche, Höhen sowie Inkreis und Umkreis aus drei bekannten Größen. Mit Zeichnung und nachvollziehbarem Rechenweg – direkt im Browser testen.">
+
+<meta name="author" content="Dieter Tepe">
+
+<meta name="keywords" content="Dreieck berechnen, Dreiecksberechnung, Dreiecksrechner, Dreieck Rechner, Dreiecksberechnung online, Seiten berechnen, Winkel berechnen, Dreiecksfläche, Sinussatz, Kosinussatz, Umkreis, Inkreis, Dreieck Geometrie">
+
+​<link rel="canonical" href="https://dietertepe.github.io/test-dreieck/">
+
+<link rel="alternate" hreflang="de" href="https://dietertepe.github.io/test-dreieck/">
+
+<link rel="alternate" hreflang="x-default" href="https://dietertepe.github.io/test-dreieck/">
+
+​<meta property="og:type" content="website">
+
+<meta property="og:locale" content="de_DE">
+
+<meta property="og:site_name" content="DT-ProfiDreieck">
+
+<meta property="og:title" content="Dreieck berechnen online – DT-ProfiDreieck">
+
+<meta property="og:description" content="Drei bekannte Größen eingeben, die übrigen Dreieckswerte berechnen und das Ergebnis maßstäblich ansehen. Jetzt die Testversion im Browser starten.">
+
+<meta property="og:url" content="https://dietertepe.github.io/test-dreieck/">
+
+<meta name="twitter:card" content="summary">
+
+​<script type="application/ld+json">
+
+{
+
+"@context": "https://schema.org",
+
+"@graph": [
+
+{
+
+"@type": "WebSite",
+
+"@id": "https://dietertepe.github.io/test-dreieck/#website",
+
+"url": "https://dietertepe.github.io/test-dreieck/",
+
+"name": "DT-ProfiDreieck",
+
+"inLanguage": "de"
+
+},
+
+{
+
+"@type": "WebPage",
+
+"@id": "https://dietertepe.github.io/test-dreieck/#webpage",
+
+"url": "https://dietertepe.github.io/test-dreieck/",
+
+"name": "Dreieck berechnen online – DT-ProfiDreieck",
+
+"description": "Online-Dreiecksberechnung aus drei bekannten Größen mit Zeichnung und nachvollziehbarem Rechenweg.",
+
+"isPartOf": {"@id": "https://dietertepe.github.io/test-dreieck/#website"},
+
+"inLanguage": "de",
+
+"mainEntity": {"@id": "https://dietertepe.github.io/test-dreieck/#software"}
+
+},
+
+{
+
+"@type": "SoftwareApplication",
+
+"@id": "https://dietertepe.github.io/test-dreieck/#software",
+
+"name": "DT-ProfiDreieck",
+
+"applicationCategory": "EducationalApplication",
+
+"applicationSubCategory": "Dreiecksrechner und Geometrie-Berechnungssoftware",
+
+"operatingSystem": "Jeder moderne Webbrowser",
+
+"browserRequirements": "JavaScript muss aktiviert sein",
+
+"url": "https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html",
+
+"description": "Dreiecksberechnung aus drei bekannten Größen. Berechnet Seiten, Winkel, Fläche, Höhen sowie Inkreis- und Umkreiswerte und stellt das Dreieck grafisch dar.",
+
+"inLanguage": ["de", "en", "pt"],
+
+"author": {"@type": "Person", "name": "Dieter Tepe"}
+
+}
+
+]
+
+}
+
+</script>
+
+​<style>
+
+:root {
+
+color-scheme: dark;
+
+--bg: #101923;
+
+--panel: #172431;
+
+--panel2: #1c2c3a;
+
+--text: #f2f7fb;
+
+--muted: #b4c4d1;
+
+--cyan: #42d2df;
+
+--cyan-dark: #087d8b;
+
+--gold: #f0c36a;
+
+--line: rgba(202, 222, 237, .16);
+
+--max: 1120px;
+
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+
+margin: 0;
+
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+color: var(--text);
+
+background:
+
+radial-gradient(ellipse at 85% 0%, rgba(66,210,223,.13), transparent 35rem),
+
+linear-gradient(180deg, #14212e 0%, var(--bg) 55%);
+
+line-height: 1.65;
+
+}
+
+a { color: inherit; }
+
+.wrap { width: min(calc(100% - 36px), var(--max)); margin-inline: auto; }
+
+.topline { border-bottom: 1px solid var(--line); }
+
+.nav {
+
+min-height: 70px; display: flex; align-items: center; justify-content: space-between;
+
+gap: 20px; padding-block: 12px;
+
+}
+
+.brand { font-weight: 850; letter-spacing: -.04em; font-size: 1.22rem; }
+
+.brand span { color: var(--cyan); }
+
+.nav-note { color: var(--muted); font-size: .9rem; }
+
+.hero { padding: clamp(48px, 8vw, 94px) 0 60px; }
+
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(28px, 6vw, 70px); align-items: center; }
+
+.eyebrow {
+
+display: inline-flex; align-items: center; gap: 9px; color: var(--gold);
+
+font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+
+}
+
+h1 { margin: 14px 0 18px; max-width: 760px; font-size: clamp(2.35rem, 5.2vw, 4.6rem); line-height: 1.04; letter-spacing: -.055em; }
+
+h1 em { color: var(--cyan); font-style: normal; }
+
+.lead { max-width: 680px; color: #d0dce5; font-size: clamp(1.08rem, 1.8vw, 1.25rem); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+.button {
+
+display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+
+min-height: 50px; padding: 13px 20px; border-radius: 12px; text-decoration: none;
+
+font-weight: 800; border: 1px solid transparent; transition: transform .15s, background .15s;
+
+}
+
+.button:hover { transform: translateY(-2px); }
+
+.primary { color: #062128; background: linear-gradient(135deg, #61e3e9, #31bdce); box-shadow: 0 12px 32px rgba(29, 186, 203, .18); }
+
+.secondary { background: rgba(255,255,255,.04); border-color: var(--line); }
+
+.micro { margin-top: 14px; color: var(--muted); font-size: .88rem; }
+
+.diagram {
+
+position: relative; padding: 18px; border: 1px solid rgba(117, 210, 223, .25);
+
+border-radius: 24px; background: linear-gradient(145deg, rgba(31,51,66,.94), rgba(16,25,35,.92));
+
+box-shadow: 0 30px 80px rgba(0,0,0,.2);
+
+}
+
+.diagram img { display: block; width: 100%; height: auto; border-radius: 12px; }
+
+.diagram-caption { padding: 10px 8px 2px; color: var(--muted); font-size: .88rem; text-align: center; }
+
+.trust-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 42px; }
+
+.trust { border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.035); padding: 15px 17px; }
+
+.trust strong { display: block; color: var(--cyan); font-size: 1rem; }
+
+.trust span { color: var(--muted); font-size: .86rem; }
+
+section.content { padding: 62px 0; border-top: 1px solid var(--line); }
+
+.section-head { max-width: 760px; margin-bottom: 28px; }
+
+h2 { margin: 0 0 12px; font-size: clamp(1.8rem, 3.5vw, 2.65rem); line-height: 1.15; letter-spacing: -.035em; }
+
+h3 { margin: 0 0 8px; font-size: 1.12rem; }
+
+p { margin: 0 0 14px; }
+
+.muted { color: var(--muted); }
+
+.feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+
+.feature { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(160deg, rgba(28,44,58,.85), rgba(20,31,43,.78)); }
+
+.feature-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: rgba(66,210,223,.12); color: var(--cyan); font-size: 1.35rem; margin-bottom: 16px; }
+
+.feature p { color: var(--muted); font-size: .96rem; margin: 0; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: start; }
+
+.checklist { list-style: none; padding: 0; margin: 18px 0 0; }
+
+.checklist li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px solid rgba(202,222,237,.09); }
+
+.checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
+
+.formula-box { border: 1px solid var(--line); background: rgba(255,255,255,.035); padding: 24px; border-radius: 18px; }
+
+.formula { font-family: "Cambria Math", "Times New Roman", serif; font-size: clamp(1.3rem, 3vw, 2rem); color: var(--gold); margin: 10px 0; }
+
+.faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+details { border: 1px solid var(--line); border-radius: 14px; padding: 17px 19px; background: rgba(255,255,255,.025); }
+
+summary { cursor: pointer; font-weight: 800; }
+
+details p { margin: 12px 0 0; color: var(--muted); }
+
+.closing { padding: 34px; border-radius: 22px; border: 1px solid rgba(66,210,223,.28); background: linear-gradient(120deg, rgba(66,210,223,.11), rgba(240,195,106,.06)); text-align: center; }
+
+.closing p { color: var(--muted); max-width: 700px; margin: 0 auto 20px; }
+
+footer { border-top: 1px solid var(--line); padding: 24px 0 38px; color: var(--muted); font-size: .88rem; }
+
+footer .footrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+footer a { color: var(--cyan); }
+
+@media (max-width: 780px) {
+
+.hero-grid, .split { grid-template-columns: 1fr; }
+
+.diagram { max-width: 560px; margin-inline: auto; }
+
+.feature-grid { grid-template-columns: 1fr 1fr; }
+
+.faq { grid-template-columns: 1fr; }
+
+}
+
+@media (max-width: 520px) {
+
+.wrap { width: min(calc(100% - 28px), var(--max)); }
+
+.nav { align-items: flex-start; flex-direction: column; gap: 2px; }
+
+.hero { padding-top: 42px; }
+
+.trust-row, .feature-grid { grid-template-columns: 1fr; }
+
+.button { width: 100%; }
+
+.closing { padding: 25px 18px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+
+</style>
+
 </head>
+
 <body>
-  <header class="topline">
-    <div class="wrap nav">
-      <div class="brand">DT-<span>Profi</span>Dreieck</div>
-      <div class="nav-note">Dreiecksberechnung · Geometrie · Rechenweg</div>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow">△ Präzise Geometrie im Browser</div>
-            <h1>Dreieck <em>berechnen</em> – Werte verstehen, Form sehen.</h1>
-            <p class="lead">Mit <strong>DT-ProfiDreieck</strong> berechnen Sie ein Dreieck aus drei bekannten Größen. Der Dreiecksrechner ermittelt die übrigen Seiten, Winkel, Fläche und weitere Geometriewerte und zeigt das Ergebnis als Zeichnung mit nachvollziehbarem Rechenweg.</p>
-            <div class="actions">
-              <a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" aria-label="DT-ProfiDreieck Testversion starten">Testversion jetzt starten <span aria-hidden="true">→</span></a>
-              <a class="button secondary" href="#funktionen">Funktionen entdecken</a>
-            </div>
-            <p class="micro">Direkt im Browser · Keine Anmeldung · Keine Installation</p>
-          </div>
-          <div class="diagram">
-            <svg viewBox="0 0 480 340" role="img" aria-labelledby="triangle-title triangle-desc">
-              <title id="triangle-title">Dreieck mit Seiten, Winkeln, Höhe und Umkreis</title>
-              <desc id="triangle-desc">Geometrische Illustration eines Dreiecks mit den Seiten a, b und c, den Winkeln Alpha, Beta und Gamma, der Höhe und dem Umkreis.</desc>
-              <defs>
-                <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#9bb8c8" stroke-opacity=".12" stroke-width="1"/>
-                </pattern>
-                <linearGradient id="triFill" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#42d2df" stop-opacity=".20"/>
-                  <stop offset="1" stop-color="#42d2df" stop-opacity=".025"/>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="0" width="480" height="340" rx="15" fill="url(#grid)"/>
-              <circle cx="239" cy="169" r="137" fill="none" stroke="#f0c36a" stroke-width="1.6" stroke-dasharray="5 6" opacity=".9"/>
-              <path d="M82 276 L366 276 L217 47 Z" fill="url(#triFill)" stroke="#42d2df" stroke-width="3" stroke-linejoin="round"/>
-              <path d="M217 47 L217 276" stroke="#f0c36a" stroke-width="1.8" stroke-dasharray="5 5"/>
-              <path d="M217 263 L230 263 L230 276" fill="none" stroke="#f0c36a" stroke-width="1.5"/>
-              <circle cx="82" cy="276" r="4" fill="#f2f7fb"/><circle cx="366" cy="276" r="4" fill="#f2f7fb"/><circle cx="217" cy="47" r="4" fill="#f2f7fb"/>
-              <g fill="#f2f7fb" font-family="system-ui, sans-serif" font-size="15" font-weight="700">
-                <text x="64" y="295">A</text><text x="373" y="295">B</text><text x="211" y="32">C</text>
-                <text x="140" y="153" fill="#42d2df">b</text><text x="304" y="153" fill="#42d2df">a</text>
-                <text x="219" y="300" fill="#42d2df">c</text>
-                <text x="232" y="190" fill="#f0c36a">h</text>
-                <text x="111" y="263" fill="#f0c36a">α</text><text x="333" y="263" fill="#f0c36a">β</text><text x="217" y="78" fill="#f0c36a">γ</text>
-              </g>
-              <circle cx="239" cy="169" r="4" fill="#f0c36a"/>
-              <text x="250" y="163" fill="#f0c36a" font-family="system-ui, sans-serif" font-size="12">O</text>
-            </svg>
-            <div class="diagram-caption">Seiten · Winkel · Höhe · Umkreis – Geometrie auf einen Blick</div>
-          </div>
-        </div>
-        <div class="trust-row" aria-label="Wichtige Eigenschaften">
-          <div class="trust"><strong>3 bekannte Größen</strong><span>als Ausgangspunkt für die Berechnung</span></div>
-          <div class="trust"><strong>Rechenweg inklusive</strong><span>Formeln und eingesetzte Zahlen nachvollziehen</span></div>
-          <div class="trust"><strong>Direkt im Browser</strong><span>ohne Installation und Benutzerkonto</span></div>
-        </div>
-      </div>
-    </section>
+<header class="topline">
 
-    <section class="content" id="funktionen">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Funktionen</div>
-          <h2>Mehr als ein einfacher Dreiecksrechner</h2>
-          <p class="muted">Ob für Mathematikunterricht, Studium, technische Ausbildung oder Konstruktion: DT-ProfiDreieck unterstützt zahlreiche Aufgaben der ebenen Dreiecksgeometrie.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">△</div>
-            <h3>Dreieck aus drei Größen berechnen</h3>
-            <p>Seiten, Winkel, Umkreisradius, Inkreisradius, Fläche oder Höhen kombinieren. Die übrigen Werte werden daraus bestimmt.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">∠</div>
-            <h3>Seiten und Winkel ermitteln</h3>
-            <p>Typische Fälle wie SSS, SWS, WSW, SWW und SSW behandeln. Bei mehrdeutigen Eingaben können mehrere Lösungen angezeigt werden.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">⌁</div>
-            <h3>Zeichnung und Geometrie</h3>
-            <p>Das Dreieck maßstäblich ansehen, die Darstellung zoomen und geometrische Elemente wie Höhen, Mittelsenkrechten und Kreise einblenden.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">ƒ</div>
-            <h3>Nachvollziehbarer Rechenweg</h3>
-            <p>Formeln, eingesetzte Zahlen und Ergebnisse Schritt für Schritt nachvollziehen – hilfreich zum Lernen, Prüfen und Dokumentieren.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">✓</div>
-            <h3>Plausibilitätsprüfungen</h3>
-            <p>Unmögliche, widersprüchliche oder nicht eindeutig lösbare Eingabekombinationen werden erkannt und erläutert.</p>
-          </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">◉</div>
-            <h3>Für Schule, Studium und Praxis</h3>
-            <p>Einsetzbar zum Üben mathematischer Zusammenhänge sowie für geometrische Aufgaben in Ausbildung, Werkstatt und Konstruktion.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<div class="wrap nav">
 
-    <section class="content">
-      <div class="wrap split">
-        <div>
-          <div class="eyebrow">So funktioniert es</div>
-          <h2>In wenigen Schritten zum berechneten Dreieck</h2>
-          <p class="muted">Sie müssen nicht alle Maße kennen. Wählen Sie drei bekannte Größen aus und geben Sie die Werte ein. Die Anwendung berechnet die übrigen Größen und stellt das Dreieck grafisch dar.</p>
-          <ul class="checklist">
-            <li>Drei bekannte Größen auswählen, zum Beispiel zwei Seiten und einen Winkel.</li>
-            <li>Werte eingeben und die gewünschte Längeneinheit wählen.</li>
-            <li>„Dreieck berechnen“ anklicken.</li>
-            <li>Ergebnisse, Zeichnung und den vollständigen Rechenweg prüfen.</li>
-          </ul>
-        </div>
-        <aside class="formula-box">
-          <h3>Beispiel: Dreiecksfläche berechnen</h3>
-          <p class="muted">Sind Grundseite und zugehörige Höhe bekannt, lässt sich die Fläche eines Dreiecks so bestimmen:</p>
-          <div class="formula">A = (g · h) / 2</div>
-          <p class="muted">Der Rechenweg macht sichtbar, welche Werte in eine Formel eingesetzt werden und wie das Ergebnis entsteht.</p>
-          <a href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" class="button secondary">Im Dreiecksrechner ausprobieren →</a>
-        </aside>
-      </div>
-    </section>
+<div class="brand">DT-<span>Profi</span>Dreieck</div>
 
-    <section class="content">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Häufige Fragen</div>
-          <h2>Fragen zur Online-Dreiecksberechnung</h2>
-        </div>
-        <div class="faq">
-          <details>
-            <summary>Wie kann ich ein Dreieck berechnen?</summary>
-            <p>Wählen Sie drei bekannte Größen, zum Beispiel drei Seiten, zwei Seiten und einen Winkel oder eine Kombination mit Fläche, Höhe, Inkreis- oder Umkreisradius. DT-ProfiDreieck berechnet die weiteren Größen, sofern die Angaben eine Lösung bestimmen.</p>
-          </details>
-          <details>
-            <summary>Welche Werte kann der Dreiecksrechner ermitteln?</summary>
-            <p>Abhängig von den Eingaben berechnet die Anwendung unter anderem Seitenlängen, Innenwinkel, Umfang, Flächeninhalt, Höhen, Inkreisradius und Umkreisradius.</p>
-          </details>
-          <details>
-            <summary>Zeigt DT-ProfiDreieck auch den Rechenweg?</summary>
-            <p>Ja. In der Anwendung lässt sich der Rechenweg aufklappen. Er zeigt Formeln, eingesetzte Zahlen, Ergebnisse und erläuternde Hinweise.</p>
-          </details>
-          <details>
-            <summary>Kann ich die Dreiecksberechnung kostenlos testen?</summary>
-            <p>Ja. Die hier verlinkte Testversion kann direkt im Browser gestartet werden. Die Berechnungen sind in der Testversion nutzbar; bestimmte Speicher- und Ausgabe-Funktionen sind der Vollversion vorbehalten.</p>
-          </details>
-          <details>
-            <summary>Muss ich etwas installieren oder mich anmelden?</summary>
-            <p>Nein. Die Testversion wird direkt im Browser geöffnet. Eine Installation und ein Benutzerkonto sind dafür nicht erforderlich.</p>
-          </details>
-          <details>
-            <summary>Funktioniert das Programm offline?</summary>
-            <p>Die Berechnungen laufen auf dem eigenen Gerät im Browser. Nach dem Laden der HTML-Anwendung ist die Berechnung auch ohne aktive Internetverbindung möglich.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+<div class="nav-note">Dreiecksberechnung · Geometrie · Rechenweg</div>
 
-    <section class="content">
-      <div class="wrap">
-        <div class="closing">
-          <div class="eyebrow">Jetzt selbst berechnen</div>
-          <h2>Testen Sie DT-ProfiDreieck direkt im Browser</h2>
-          <p>Geben Sie drei bekannte Größen ein, lassen Sie Ihr Dreieck berechnen und prüfen Sie Ergebnis, Zeichnung und Rechenweg selbst.</p>
-          <a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html">DT-ProfiDreieck Testversion starten →</a>
-        </div>
-      </div>
-    </section>
-  </main>
+</div>
 
-  <footer>
-    <div class="wrap footrow">
-      <span>© <span id="year">2026</span> Dieter Tepe · DT-ProfiDreieck</span>
-      <span>Hinweis: Ergebnisse vor einer sicherheitskritischen oder verbindlichen Verwendung fachlich prüfen.</span>
-      <a href="https://dt-profidreieck.de/">Zur Produktseite</a>
-    </div>
-  </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+</header>
+
+​<main>
+
+<section class="hero">
+
+<div class="wrap">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="eyebrow">△ Präzise Geometrie im Browser</div>
+
+<h1>Dreieck <em>berechnen</em> – Werte verstehen, Form sehen.</h1>
+
+<p class="lead">Mit <strong>DT-ProfiDreieck</strong> berechnen Sie ein Dreieck aus drei bekannten Größen. Der Dreiecksrechner ermittelt die übrigen Seiten, Winkel, Fläche und weitere Geometriewerte und zeigt das Ergebnis als Zeichnung mit nachvollziehbarem Rechenweg.</p>
+
+<div class="actions">
+
+<a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" aria-label="DT-ProfiDreieck Testversion starten">Testversion jetzt starten <span aria-hidden="true">→</span></a>
+
+<a class="button secondary" href="#funktionen">Funktionen entdecken</a>
+
+</div>
+
+<p class="micro">Direkt im Browser · Keine Anmeldung · Keine Installation</p>
+
+</div>
+
+<div class="diagram">
+
+<img src="data:image/webp;base64,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" alt="DT-ProfiDreieck Geometrie-Visualisierung" style="width:100%; height:auto; display:block; border-radius:12px; border: 1px solid rgba(66,210,223,0.2);">
+
+<div class="diagram-caption">Seiten · Winkel · Höhe · Umkreis – Geometrie auf einen Blick</div>
+
+</div>
+
+</div>
+
+<div class="trust-row" aria-label="Wichtige Eigenschaften">
+
+<div class="trust"><strong>3 bekannte Größen</strong><span>als Ausgangspunkt für die Berechnung</span></div>
+
+<div class="trust"><strong>Rechenweg inklusive</strong><span>Formeln und eingesetzte Zahlen nachvollziehen</span></div>
+
+<div class="trust"><strong>Direkt im Browser</strong><span>ohne Installation und Benutzerkonto</span></div>
+
+</div>
+
+</div>
+
+</section>
+
+​<section class="content" id="funktionen">
+
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="eyebrow">Funktionen</div>
+
+<h2>Mehr als ein einfacher Dreiecksrechner</h2>
+
+<p class="muted">Ob für Mathematikunterricht, Studium, technische Ausbildung oder Konstruktion: DT-ProfiDreieck unterstützt zahlreiche Aufgaben der ebenen Dreiecksgeometrie.</p>
+
+</div>
+
+<div class="feature-grid">
+
+<article class="feature">
+
+<div class="feature-icon" aria-hidden="true">△</div>
+
+<h3>Dreieck aus drei Größen berechnen</h3>
+
+<p>Seiten, Winkel, Umkreisradius, Inkreisradius, Fläche oder Höhen kombinieren. Die übrigen Werte werden daraus bestimmt.</p>
+
+</article>
+
+<article class="feature">
+
+<div class="feature-icon" aria-hidden="true">∠</div>
+
+<h3>Seiten und Winkel ermitteln</h3>
+
+<p>Typische Fälle wie SSS, SWS, WSW, SWW und SSW behandeln. Bei mehrdeutigen Eingaben können mehrere Lösungen angezeigt werden.</p>
+
+</article>
+
+<article class="feature">
+
+<div class="feature-icon" aria-hidden="true">⌁</div>
+
+<h3>Zeichnung und Geometrie</h3>
+
+<p>Das Dreieck maßstäblich ansehen, die Darstellung zoomen und geometrische Elemente wie Höhen, Mittelsenkrechten und Kreise einblenden.</p>
+
+</article>
+
+<article class="feature">
+
+<div class="feature-icon" aria-hidden="true">ƒ</div>
+
+<h3>Nachvollziehbarer Rechenweg</h3>
+
+<p>Formeln, eingesetzte Zahlen und Ergebnisse Schritt für Schritt nachvollziehen – hilfreich zum Lernen, Prüfen und Dokumentieren.</p>
+
+</article>
+
+<article class="feature">
+
+<div class="feature-icon" aria-hidden="true">✓</div>
+
+<h3>Plausibilitätsprüfungen</h3>
+
+<p>Unmögliche, widersprüchliche oder nicht eindeutig lösbare Eingabekombinationen werden erkannt und erläutert.</p>
+
+</article>
+
+<article class="feature">
+
+<div class="feature-icon" aria-hidden="true">◉</div>
+
+<h3>Für Schule, Studium und Praxis</h3>
+
+<p>Einsetzbar zum Üben mathematischer Zusammenhänge sowie für geometrische Aufgaben in Ausbildung, Werkstatt und Konstruktion.</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+​<section class="content">
+
+<div class="wrap split">
+
+<div>
+
+<div class="eyebrow">So funktioniert es</div>
+
+<h2>In wenigen Schritten zum berechneten Dreieck</h2>
+
+<p class="muted">Sie müssen nicht alle Maße kennen. Wählen Sie drei bekannte Größen aus und geben Sie die Werte ein. Die Anwendung berechnet die übrigen Größen und stellt das Dreieck grafisch dar.</p>
+
+<ul class="checklist">
+
+<li>Drei bekannte Größen auswählen, zum Beispiel zwei Seiten und einen Winkel.</li>
+
+<li>Werte eingeben und die gewünschte Längeneinheit wählen.</li>
+
+<li>„Dreieck berechnen“ anklicken.</li>
+
+<li>Ergebnisse, Zeichnung und den vollständigen Rechenweg prüfen.</li>
+
+</ul>
+
+</div>
+
+<aside class="formula-box">
+
+<h3>Beispiel: Dreiecksfläche berechnen</h3>
+
+<p class="muted">Sind Grundseite und zugehörige Höhe bekannt, lässt sich die Fläche eines Dreiecks so bestimmen:</p>
+
+<div class="formula">A = (g · h) / 2</div>
+
+<p class="muted">Der Rechenweg macht sichtbar, welche Werte in eine Formel eingesetzt werden und wie das Ergebnis entsteht.</p>
+
+<a href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html" class="button secondary">Im Dreiecksrechner ausprobieren →</a>
+
+</aside>
+
+</div>
+
+</section>
+
+​<section class="content">
+
+<div class="wrap">
+
+<div class="section-head">
+
+<div class="eyebrow">Häufige Fragen</div>
+
+<h2>Fragen zur Online-Dreiecksberechnung</h2>
+
+</div>
+
+<div class="faq">
+
+<details>
+
+<summary>Wie kann ich ein Dreieck berechnen?</summary>
+
+<p>Wählen Sie drei bekannte Größen, zum Beispiel drei Seiten, zwei Seiten und einen Winkel oder eine Kombination mit Fläche, Höhe, Inkreis- oder Umkreisradius. DT-ProfiDreieck berechnet die weiteren Größen, sofern die Angaben eine Lösung bestimmen.</p>
+
+</details>
+
+<details>
+
+<summary>Welche Werte kann der Dreiecksrechner ermitteln?</summary>
+
+<p>Abhängig von den Eingaben berechnet die Anwendung unter anderem Seitenlängen, Innenwinkel, Umfang, Flächeninhalt, Höhen, Inkreisradius und Umkreisradius.</p>
+
+</details>
+
+<details>
+
+<summary>Zeigt DT-ProfiDreieck auch den Rechenweg?</summary>
+
+<p>Ja. In der Anwendung lässt sich der Rechenweg aufklappen. Er zeigt Formeln, eingesetzte Zahlen, Ergebnisse und erläuternde Hinweise.</p>
+
+</details>
+
+<details>
+
+<summary>Kann ich die Dreiecksberechnung kostenlos testen?</summary>
+
+<p>Ja. Die hier verlinkte Testversion kann direkt im Browser gestartet werden. Die Berechnungen sind in der Testversion nutzbar; bestimmte Speicher- und Ausgabe-Funktionen sind der Vollversion vorbehalten.</p>
+
+</details>
+
+<details>
+
+<summary>Muss ich etwas installieren oder mich anmelden?</summary>
+
+<p>Nein. Die Testversion wird direkt im Browser geöffnet. Eine Installation und ein Benutzerkonto sind dafür nicht erforderlich.</p>
+
+</details>
+
+<details>
+
+<summary>Funktioniert das Programm offline?</summary>
+
+<p>Die Berechnungen laufen auf dem eigenen Gerät im Browser. Nach dem Laden der HTML-Anwendung ist die Berechnung auch ohne aktive Internetverbindung möglich.</p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+​<section class="content">
+
+<div class="wrap">
+
+<div class="closing">
+
+<div class="eyebrow">Jetzt selbst berechnen</div>
+
+<h2>Testen Sie DT-ProfiDreieck direkt im Browser</h2>
+
+<p>Geben Sie drei bekannte Größen ein, lassen Sie Ihr Dreieck berechnen und prüfen Sie Ergebnis, Zeichnung und Rechenweg selbst.</p>
+
+<a class="button primary" href="https://dt-profidreieck.de/DT-ProfiDreieck_Test_1-1-0.html">DT-ProfiDreieck Testversion starten →</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+​<footer>
+
+<div class="wrap footrow">
+
+<span>© <span id="year">2026</span> Dieter Tepe · DT-ProfiDreieck</span>
+
+<span>Hinweis: Ergebnisse vor einer sicherheitskritischen oder verbindlichen Verwendung fachlich prüfen.</span>
+
+<a href="https://www.dt-profidreieck.de/">Zur Produktseite</a>
+
+</div>
+
+</footer>
+
+<script>
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+
 </body>
+
 </html>
+
