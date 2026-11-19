@@ -28,6 +28,9 @@ window.DT_CONFIG = {
 <meta property="og:image:width" content="700">
 <meta property="og:image:height" content="570">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://dt-profidreieck.de/Landigpage_Daten/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="https://dt-profidreieck.de/Landigpage_Daten/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://dt-profidreieck.de/Landigpage_Daten/apple-touch-icon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,7 +78,7 @@ window.DT_CONFIG = {
  * ========================================================================== */
 :root{
   --bg:#13171c; --bg2:#1a2026; --surface:#212a31; --surface2:#27313a;
-  --line:#323e49; --line-soft:#2a333c; --fg:#e7eef4; --muted:#94a4b2; --faint:#6c7b88;
+  --line:#323e49; --line-soft:#2a333c; --fg:#e7eef4; --muted:#94a4b2; --faint:#8a99a6;
   --accent:#34c3d4; --accent-strong:#1f97a8; --accent-soft:rgba(52,195,212,.14);
   --brass:#caa04a; --brass-soft:rgba(202,160,74,.16);
   --ok:#46b95c; --warn:#d6a328; --bad:#e5675c;
@@ -88,7 +91,7 @@ window.DT_CONFIG = {
 }
 [data-theme="light"]{
   --bg:#eef1f5; --bg2:#e5eaf0; --surface:#ffffff; --surface2:#f3f6f9; --line:#d3dce4; --line-soft:#e2e8ee;
-  --fg:#182530; --muted:#566673; --faint:#8494a1; --accent-soft:rgba(31,151,168,.12); --brass-soft:rgba(160,120,30,.14);
+  --fg:#182530; --muted:#566673; --faint:#66727d; --accent-soft:rgba(31,151,168,.12); --brass-soft:rgba(160,120,30,.14);
   --panel:#ffffff; --panel-grid:rgba(0,0,0,.06); --shadow:0 12px 30px -20px rgba(20,40,60,.45);
 }
 *{box-sizing:border-box;}
@@ -327,16 +330,18 @@ canvas{display:block;width:100%;height:auto;}
 }
 </style>
 
+<style id="dt-ready-css">html:not(.dt-ready) .app-main,html:not(.dt-ready) .app-footer{visibility:hidden}</style>
+<noscript><style>.app-main,.app-footer{visibility:visible!important}</style></noscript>
 </head>
 <body>
 <!-- Gelber Editionsbalken: nur Testversion (per JS eingeblendet) -->
-<div id="testBar" class="edition-bar" hidden><span data-i18n="testBar">Testversion – Speichern, Laden und Export nur in der Vollversion:</span> <a id="testBarLink" href="#" target="_blank" rel="noopener noreferrer"></a></div>
+<div id="testBar" class="edition-bar"><span data-i18n="testBar">Testversion – Speichern, Laden und Export nur in der Vollversion:</span> <a id="testBarLink" href="https://www.dt-profidreieck.de" target="_blank" rel="noopener noreferrer">www.dt-profidreieck.de</a></div>
 
 <header class="app-header">
   <div class="brand">
     <span class="mark" id="appTitle" title="DT-ProfiDreieck">DT-ProfiDreieck</span>
     <span class="tag" data-i18n="subtitle">Dreiecksberechnung: drei Größen wählen – alle übrigen werden berechnet und gezeichnet.</span>
-    <span class="license-line" id="licenseLine"></span>
+    <span class="license-line" id="licenseLine">Testversion</span>
   </div>
   <div class="header-spacer"></div>
   <div class="header-controls">
@@ -616,5 +621,7 @@ canvas{display:block;width:100%;height:auto;}
 
 </script>
 
+<script>/* Inhalt erst zeigen, wenn das Programm ihn aufgebaut hat – verhindert Springen beim Laden */
+(function(){var d=document.documentElement,f=function(){setTimeout(function(){d.classList.add("dt-ready")},0)};if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",f)}else{f()}setTimeout(function(){d.classList.add("dt-ready")},4000)})();</script>
 </body>
 </html>
