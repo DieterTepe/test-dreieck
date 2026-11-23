@@ -13,16 +13,16 @@ window.DT_CONFIG = {
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- ===== Suchmaschinen ===== -->
-<title>DT-ProfiDreieck Testversion – Dreieck berechnen mit Zeichnung und Rechenweg</title>
-<meta name="description" content="Gratis-Testversion: Dreieck aus drei Größen berechnen – Seiten, Winkel, Fläche, Höhen, Umkreis und Inkreis. Mit maßstäblicher Zeichnung und vollständigem Rechenweg, direkt im Browser.">
+<title>Dreiecksrechner Testversion – Winkel & Höhe berechnen</title>
+<meta name="description" content="Gratis-Testversion: Dreieck aus drei Größen berechnen – Seiten, Winkel, Höhen, Fläche, Umkreis, Inkreis. Mit Zeichnung und Rechenweg im Browser.">
 <meta name="author" content="Dieter Tepe">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DT-ProfiTools">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="DT-ProfiDreieck Testversion – Dreieck berechnen mit Zeichnung und Rechenweg">
-<meta property="og:description" content="Gratis-Testversion: Dreieck aus drei Größen berechnen – Seiten, Winkel, Fläche, Höhen, Umkreis und Inkreis. Mit maßstäblicher Zeichnung und vollständigem Rechenweg, direkt im Browser.">
+<meta property="og:title" content="Dreiecksrechner Testversion – Winkel & Höhe berechnen">
+<meta property="og:description" content="Gratis-Testversion: Dreieck aus drei Größen berechnen – Seiten, Winkel, Höhen, Fläche, Umkreis, Inkreis. Mit Zeichnung und Rechenweg im Browser.">
 <meta property="og:url" content="https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html">
 <meta property="og:image" content="https://dietertepe.github.io/test-dreieck/dreieck-berechnen.jpg">
 <meta property="og:image:width" content="700">
@@ -621,6 +621,8 @@ canvas{display:block;width:100%;height:auto;}
 
 </script>
 
+<script>/* Sprache aus der Adresse (?lang=en|pt) – bleibt beim Aktualisieren erhalten */
+(function(){var L=/^(de|en|pt)$/,q=new URLSearchParams(location.search).get("lang");function setUrl(l){try{var u=new URL(location.href);if(l==="de")u.searchParams.delete("lang");else u.searchParams.set("lang",l);history.replaceState(null,"",u.pathname+u.search+u.hash)}catch(e){}}function init(){if(q&&L.test(q)&&document.documentElement.lang!==q){var b=document.querySelector('.lang-btn[data-lang="'+q+'"]');if(b)b.click()}document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".lang-btn[data-lang]");if(b&&L.test(b.getAttribute("data-lang")))setUrl(b.getAttribute("data-lang"))},true)}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){setTimeout(init,0)})}else{setTimeout(init,0)}})();</script>
 <script>/* Inhalt erst zeigen, wenn das Programm ihn aufgebaut hat – verhindert Springen beim Laden */
 (function(){var d=document.documentElement,f=function(){setTimeout(function(){d.classList.add("dt-ready")},0)};if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",f)}else{f()}setTimeout(function(){d.classList.add("dt-ready")},4000)})();</script>
 </body>
