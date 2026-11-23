@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#101923">
+
+  <title>Calculadora de Triângulo Online | DT-ProfiDreieck</title>
+  <meta name="description" content="Calcule triângulos online a partir de três valores: lados, ângulos, área, alturas e circunferências. Com desenho, memória de cálculo e DXF.">
+  <meta name="author" content="Dieter Tepe">
+
+  <link rel="canonical" href="https://dietertepe.github.io/test-dreieck/pt/">
+  <link rel="alternate" hreflang="de" href="https://dietertepe.github.io/test-dreieck/">
+  <link rel="alternate" hreflang="en" href="https://dietertepe.github.io/test-dreieck/en/">
+  <link rel="alternate" hreflang="pt" href="https://dietertepe.github.io/test-dreieck/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://dietertepe.github.io/test-dreieck/">
+  <link rel="icon" href="https://dt-profidreieck.de/Landigpage_Daten/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="https://dt-profidreieck.de/Landigpage_Daten/favicon.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://dt-profidreieck.de/Landigpage_Daten/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="DT-ProfiTools">
+  <meta property="og:title" content="Calculadora de Triângulo Online | DT-ProfiDreieck">
+  <meta property="og:description" content="Calcule triângulos online a partir de três valores: lados, ângulos, área, alturas e circunferências. Com desenho, memória de cálculo e DXF.">
+  <meta property="og:url" content="https://dietertepe.github.io/test-dreieck/pt/">
+  <meta property="og:image" content="https://dietertepe.github.io/test-dreieck/dreieck-berechnen.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- AUTOMATISCH ERZEUGT mit _sprachen/startseiten.py (Repo dt-profidreieck-web) – nicht von Hand bearbeiten -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://dietertepe.github.io/test-dreieck/pt/#webpage",
+      "url": "https://dietertepe.github.io/test-dreieck/pt/",
+      "name": "Calculadora de Triângulo Online | DT-ProfiDreieck",
+      "description": "Calcule triângulos online a partir de três valores: lados, ângulos, área, alturas e circunferências. Com desenho, memória de cálculo e DXF.",
+      "inLanguage": "pt-BR",
+      "primaryImageOfPage": "https://dietertepe.github.io/test-dreieck/dreieck-berechnen.jpg",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "DT-ProfiTools",
+        "url": "https://dt-profidreieck.de/"
+      },
+      "mainEntity": {
+        "@id": "https://dietertepe.github.io/test-dreieck/pt/#software"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://dietertepe.github.io/test-dreieck/pt/#software",
+      "name": "DT-ProfiDreieck",
+      "url": "https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html?lang=pt",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Calculadora de triângulo com exportação DXF",
+      "operatingSystem": "Webbrowser (Windows, macOS, Linux, Android, iOS)",
+      "browserRequirements": "JavaScript",
+      "inLanguage": [
+        "de",
+        "en",
+        "pt-BR"
+      ],
+      "image": "https://dietertepe.github.io/test-dreieck/dreieck-berechnen.jpg",
+      "description": "Com o DT-ProfiDreieck você calcula um triângulo a partir de três valores conhecidos. A calculadora encontra os demais lados, ângulos, a área e outras grandezas geométricas e mostra o resultado como desenho com memória de cálculo – na versão completa também em DXF para CAD e CNC.",
+      "author": {
+        "@type": "Person",
+        "name": "Dieter Tepe",
+        "url": "https://dt-profidreieck.de/"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Iniciar a versão de teste",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html?lang=pt"
+        },
+        {
+          "@type": "Offer",
+          "name": "Versão completa",
+          "price": "69.00",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.checkout-ds24.com/product/722585"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101923;
+      --panel: #172431;
+      --panel2: #1c2c3a;
+      --text: #f2f7fb;
+      --muted: #b4c4d1;
+      --cyan: #42d2df;
+      --cyan-dark: #087d8b;
+      --gold: #f0c36a;
+      --line: rgba(202, 222, 237, .16);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(66,210,223,.13), transparent 35rem),
+        linear-gradient(180deg, #14212e 0%, var(--bg) 55%);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 36px), var(--max)); margin-inline: auto; }
+    .topline { border-bottom: 1px solid var(--line); }
+    .nav {
+      min-height: 70px; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding-block: 12px;
+    }
+    .brand { font-weight: 850; letter-spacing: -.04em; font-size: 1.22rem; }
+    .brand span { color: var(--cyan); }
+    .nav-note { color: var(--muted); font-size: .9rem; }
+    .hero { padding: clamp(48px, 8vw, 94px) 0 60px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(28px, 6vw, 70px); align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; color: var(--gold);
+      font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    h1 { margin: 14px 0 18px; max-width: 760px; font-size: clamp(2.35rem, 5.2vw, 4.6rem); line-height: 1.04; letter-spacing: -.055em; }
+    h1 em { color: var(--cyan); font-style: normal; }
+    .lead { max-width: 680px; color: #d0dce5; font-size: clamp(1.08rem, 1.8vw, 1.25rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+      min-height: 50px; padding: 13px 20px; border-radius: 12px; text-decoration: none;
+      font-weight: 800; border: 1px solid transparent; transition: transform .15s, background .15s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .primary { color: #062128; background: linear-gradient(135deg, #61e3e9, #31bdce); box-shadow: 0 12px 32px rgba(29, 186, 203, .18); }
+    .secondary { background: rgba(255,255,255,.04); border-color: var(--line); }
+    .micro { margin-top: 14px; color: var(--muted); font-size: .88rem; }
+    .diagram {
+      position: relative; padding: 18px; border: 1px solid rgba(117, 210, 223, .25);
+      border-radius: 24px; background: linear-gradient(145deg, rgba(31,51,66,.94), rgba(16,25,35,.92));
+      box-shadow: 0 30px 80px rgba(0,0,0,.2);
+    }
+    .diagram img { display: block; width: 100%; height: auto; border-radius: 14px; }
+    .diagram-caption { padding: 10px 8px 2px; color: var(--muted); font-size: .88rem; text-align: center; }
+    .trust-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 42px; }
+    .trust { border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.035); padding: 15px 17px; }
+    .trust strong { display: block; color: var(--cyan); font-size: 1rem; }
+    .trust span { color: var(--muted); font-size: .86rem; }
+    section.content { padding: 62px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 760px; margin-bottom: 28px; }
+    h2 { margin: 0 0 12px; font-size: clamp(1.8rem, 3.5vw, 2.65rem); line-height: 1.15; letter-spacing: -.035em; }
+    h3 { margin: 0 0 8px; font-size: 1.12rem; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .feature { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(160deg, rgba(28,44,58,.85), rgba(20,31,43,.78)); }
+    .feature-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: rgba(66,210,223,.12); color: var(--cyan); font-size: 1.35rem; margin-bottom: 16px; }
+    .feature p { color: var(--muted); font-size: .96rem; margin: 0; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: start; }
+    .checklist { list-style: none; padding: 0; margin: 18px 0 0; }
+    .checklist li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px solid rgba(202,222,237,.09); }
+    .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
+    .formula-box { border: 1px solid var(--line); background: rgba(255,255,255,.035); padding: 24px; border-radius: 18px; }
+    .formula { font-family: "Cambria Math", "Times New Roman", serif; font-size: clamp(1.3rem, 3vw, 2rem); color: var(--gold); margin: 10px 0; }
+    .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    details { border: 1px solid var(--line); border-radius: 14px; padding: 17px 19px; background: rgba(255,255,255,.025); }
+    summary { cursor: pointer; font-weight: 800; }
+    details p { margin: 12px 0 0; color: var(--muted); }
+    .closing { padding: 34px; border-radius: 22px; border: 1px solid rgba(66,210,223,.28); background: linear-gradient(120deg, rgba(66,210,223,.11), rgba(240,195,106,.06)); text-align: center; }
+    .closing p { color: var(--muted); max-width: 700px; margin: 0 auto 20px; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 38px; color: var(--muted); font-size: .88rem; }
+    footer .footrow { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer a { color: var(--cyan); }
+    @media (max-width: 780px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .diagram { max-width: 560px; margin-inline: auto; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .faq { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .nav { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .hero { padding-top: 42px; }
+      .trust-row, .feature-grid { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .closing { padding: 25px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+  
+    .media-link { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 28px; align-items:center; }
+    .media-link a.thumb { position:relative; display:block; border-radius:16px; overflow:hidden; border:1px solid var(--line); }
+    .media-link a.thumb img { display:block; width:100%; height:auto; }
+    .media-link a.thumb span { position:absolute; inset:auto 12px 12px auto; background:rgba(16,25,35,.85); color:var(--text);
+      padding:6px 12px; border-radius:999px; font-weight:800; font-size:.9rem; }
+    .price { font-size: 2.2rem; font-weight: 850; color: var(--gold); letter-spacing:-.03em; }
+    .price small { font-size: .95rem; color: var(--muted); font-weight: 600; }
+    .tools { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:10px; }
+    @media (max-width: 780px) { .media-link { grid-template-columns: 1fr; } }
+
+  
+    .langs { display:inline-flex; gap:4px; margin-left:14px; }
+    .langs a { text-decoration:none; font-size:.8rem; font-weight:800; padding:3px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); }
+    .langs a[aria-current="page"] { background:var(--cyan); border-color:var(--cyan); color:#062128; }
+
+  </style>
+</head>
+<body>
+  <header class="topline">
+    <div class="wrap nav">
+      <div class="brand">DT-<span>Profi</span>Dreieck</div>
+      <div class="nav-note"><a href="https://dt-profidreieck.de/pt/">Todas as DT-ProfiTools em dt-profidreieck.de</a><nav class="langs" aria-label="Idioma"><a href="https://dietertepe.github.io/test-dreieck/" hreflang="de" lang="de">DE</a><a href="https://dietertepe.github.io/test-dreieck/en/" hreflang="en" lang="en">EN</a><a href="https://dietertepe.github.io/test-dreieck/pt/" hreflang="pt" lang="pt" aria-current="page">PT</a></nav></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Calculadora de triângulo com exportação DXF</div>
+            <h1><em>Calcular</em> triângulos – entender os valores, ver a forma.</h1>
+            <p class="lead">Com o <strong>DT-ProfiDreieck</strong> você calcula um triângulo a partir de três valores conhecidos. A calculadora encontra os demais lados, ângulos, a área e outras grandezas geométricas e mostra o resultado como desenho com memória de cálculo – na versão completa também em DXF para CAD e CNC.</p>
+            <div class="actions">
+              <a class="button primary" href="https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html?lang=pt">Iniciar a versão de teste <span aria-hidden="true">→</span></a>
+              <a class="button secondary" href="#funktionen">Conhecer as funções</a>
+            </div>
+            <p class="micro">Direto no navegador · Sem cadastro · Sem instalação</p>
+          </div>
+          <div class="diagram">
+            <picture>
+              <source srcset="https://dietertepe.github.io/test-dreieck/dreieck-berechnen.webp" type="image/webp">
+              <img src="https://dietertepe.github.io/test-dreieck/dreieck-berechnen.jpg" width="700" height="570" fetchpriority="high" decoding="async"
+                   alt="Triângulo com lados a, b e c, ângulos alfa, beta e gama, alturas, circunferência circunscrita e inscrita, círculo de nove pontos e reta de Euler – desenho do DT-ProfiDreieck">
+            </picture>
+            <div class="diagram-caption">Lados · ângulos · altura · circunferência – a geometria de relance</div>
+          </div>
+        </div>
+        <div class="trust-row" aria-label="Funções">
+          <div class="trust"><strong>3 valores conhecidos</strong><span>como ponto de partida</span></div>
+          <div class="trust"><strong>Memória de cálculo inclusa</strong><span>acompanhe fórmulas e números aplicados</span></div>
+          <div class="trust"><strong>DXF para CAD e CNC</strong><span>unidades reais, separadas em camadas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="funktionen">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Funções</div>
+          <h2>O que o DT-ProfiDreieck calcula</h2>
+          <p class="muted">Para projeto, oficina, escritórios técnicos, treinamento e ensino – um único arquivo HTML que calcula no seu próprio dispositivo.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">△</div>
+            <h3>Calcular o triângulo com três valores</h3>
+            <p>Combine lados, ângulos, raio circunscrito, raio inscrito, área ou alturas. Os demais valores são calculados.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">∠</div>
+            <h3>Encontrar lados e ângulos</h3>
+            <p>Casos clássicos LLL, LAL, ALA, LAA e LLA. Em entradas ambíguas, são detectadas zero, uma ou duas soluções.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">⌁</div>
+            <h3>Desenho e geometria</h3>
+            <p>Veja o triângulo em escala e exiba alturas, mediatrizes, bissetrizes, reta de Euler, círculo de nove pontos e circunferências exinscritas.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">ƒ</div>
+            <h3>Memória de cálculo rastreável</h3>
+            <p>Acompanhe fórmulas, números aplicados e resultados passo a passo – útil para aprender, conferir e documentar.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">DXF</div>
+            <h3>Exportação para CAD e CNC</h3>
+            <p>Na versão completa: DXF real em unidades reais, separado em camadas, além de SVG, PNG e PDF para documentação.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon" aria-hidden="true">✓</div>
+            <h3>Verificações de plausibilidade</h3>
+            <p>Entradas impossíveis ou contraditórias são detectadas e explicadas, entre outras pela desigualdade de Euler.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">Como funciona</div>
+          <h2>Do dado ao resultado em poucos passos</h2>
+          <ul class="checklist">
+            <li>Escolha três valores conhecidos, por exemplo dois lados e um ângulo.</li>
+            <li>Digite os valores e escolha a unidade de comprimento.</li>
+            <li>Clique em “Calcular triângulo”.</li>
+            <li>Confira os resultados, o desenho e a memória de cálculo completa.</li>
+          </ul>
+        </div>
+        <aside class="formula-box">
+          <h3>Exemplo: área do triângulo</h3>
+          <p class="muted">Conhecendo a base e a altura correspondente, a área do triângulo é:</p>
+          <div class="formula">A = (g · h) / 2</div>
+          <p class="muted">A memória de cálculo mostra quais valores são usados e como o resultado é obtido.</p>
+          <a href="https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html?lang=pt" class="button secondary">Experimentar na versão de teste →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content" id="video">
+      <div class="wrap media-link">
+        <a class="thumb" href="https://dt-profidreieck.de/videos/dreieck-dxf-werkstatt.html">
+          <img src="https://dt-profidreieck.de/Dreieck_Daten/bilder/poster-v2-werkstatt.jpg" width="1280" height="720" loading="lazy" alt="Miniatura do vídeo: DT-ProfiDreieck">
+          <span>▶ Ver o vídeo</span>
+        </a>
+        <div>
+          <div class="eyebrow">Versão completa</div>
+          <h2>Comprar o DT-ProfiDreieck</h2>
+          <div class="price">69 € <small>pagamento único · sem assinatura</small></div>
+          <p class="muted">A versão completa é um único arquivo HTML que funciona offline – no PC, tablet e celular. Também liberados: salvar, abrir, imprimir/PDF e relatórios.</p>
+          <div class="actions">
+            <a class="button primary" rel="nofollow" href="https://www.checkout-ds24.com/product/722585">Versão completa · 69 €</a>
+            <a class="button secondary" href="https://dt-profidreieck.de/pt/#dreieck">Página do produto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Perguntas frequentes</div>
+          <h2>Dúvidas sobre o DT-ProfiDreieck</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Como calcular um triângulo?</summary>
+            <p>Escolha três valores conhecidos – por exemplo três lados, dois lados e um ângulo, ou uma combinação com área, altura, raio inscrito ou circunscrito. O DT-ProfiDreieck calcula os demais valores, desde que os dados definam uma solução.</p>
+          </details>
+          <details>
+            <summary>Quais valores a calculadora de triângulo fornece?</summary>
+            <p>Conforme a entrada: comprimentos dos lados, ângulos internos, perímetro, área, alturas, raio inscrito e raio circunscrito.</p>
+          </details>
+          <details>
+            <summary>Posso exportar o triângulo em DXF?</summary>
+            <p>Sim, na versão completa. O DXF usa unidades reais e camadas separadas para triângulo, circunferências, linhas auxiliares e textos – pronto para CAD e CNC.</p>
+          </details>
+          <details>
+            <summary>Posso testar a calculadora de graça?</summary>
+            <p>Sim. A versão de teste abre direto no navegador. Os cálculos funcionam; salvar, abrir e exportar ficam para a versão completa.</p>
+          </details>
+          <details>
+            <summary>Preciso instalar algo ou criar conta?</summary>
+            <p>Não. A versão de teste abre direto no navegador, sem instalação e sem cadastro.</p>
+          </details>
+          <details>
+            <summary>O programa funciona offline?</summary>
+            <p>Os cálculos rodam no seu próprio dispositivo. Depois de carregado, o aplicativo HTML funciona também sem internet.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap">
+        <div class="closing">
+          <div class="eyebrow">Calcule você mesmo</div>
+          <h2>Teste o DT-ProfiDreieck direto no navegador</h2>
+          <p>Insira os valores e confira o resultado e a memória de cálculo – sem cadastro e sem instalação.</p>
+          <a class="button primary" href="https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html?lang=pt">Iniciar o teste do DT-ProfiDreieck →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footrow">
+        <span>© <span id="year">2026</span> Dieter Tepe · DT-ProfiDreieck</span>
+        <span>Aviso: verifique os resultados tecnicamente antes de qualquer uso crítico ou vinculante.</span>
+        <a href="https://dt-profidreieck.de/impressum.html">Aviso legal (em alemão)</a>
+        <a href="https://dt-profidreieck.de/datenschutz.html">Privacidade (em alemão)</a>
+      </div>
+      <nav class="tools" aria-label="Outras ferramentas:">Outras ferramentas: <span>Calculadora de triângulo</span> · <a href="https://dietertepe.github.io/dt-profischraube-web/pt/">Parafusos VDI 2230</a> · <a href="https://dietertepe.github.io/dt-profipassung-web/pt/">Ajustes ISO 286</a> · <a href="https://dietertepe.github.io/dt-profischweissnaht-web/pt/">Soldas EN 1993-1-8</a></nav>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
