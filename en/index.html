@@ -90,6 +90,11 @@
           "availability": "https://schema.org/InStock",
           "url": "https://www.checkout-ds24.com/product/722585"
         }
+      ],
+      "featureList": [
+        "Area of a triangle – even without the height",
+        "Angles of a triangle from three sides",
+        "Height of a triangle – from sides or an angle"
       ]
     }
   ]
@@ -216,6 +221,12 @@
     .langs { display:inline-flex; gap:4px; margin-left:14px; }
     .langs a { text-decoration:none; font-size:.8rem; font-weight:800; padding:3px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); }
     .langs a[aria-current="page"] { background:var(--cyan); border-color:var(--cyan); color:#062128; }
+    .task-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .task { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.035); }
+    .task p { color: var(--muted); font-size: .96rem; }
+    .task-f { font-size: 1.05rem; margin: 8px 0 0; overflow-wrap: anywhere; }
+    .task-cta { margin-top: 22px; }
+    @media (max-width: 780px) { .task-grid { grid-template-columns: 1fr; } }
 
   </style>
 </head>
@@ -297,6 +308,39 @@
             <p>Impossible or contradictory input is detected and explained, among others via Euler's inequality.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="content" id="aufgaben">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Common tasks</div>
+          <h2>Find the area, angles and height of a triangle</h2>
+          <p class="muted">Three questions come up again and again in the workshop, in design and at school. Here are the matching formulas – DT-ProfiDreieck picks the calculation path automatically and shows it step by step.</p>
+        </div>
+        <div class="task-grid">
+          <article class="task" id="flaeche">
+            <h3>Area of a triangle – even without the height</h3>
+            <p>With base and height it is simple. If only the three sides are known, Heron's formula does the job; with two sides and the included angle, the sine. This also works for an irregular triangle without a right angle.</p>
+            <div class="formula task-f">A = ½ · c · h<sub>c</sub></div>
+            <div class="formula task-f">A = ½ · a · b · sin γ</div>
+            <div class="formula task-f">A = √(s·(s−a)·(s−b)·(s−c)), s = (a+b+c)/2</div>
+          </article>
+          <article class="task" id="winkel">
+            <h3>Angles of a triangle from three sides</h3>
+            <p>If all side lengths are given, the law of cosines returns every angle. If only one angle is missing, the angle sum of 180° is enough. With two sides and a non-included angle (SSA), the program checks whether there are zero, one or two solutions.</p>
+            <div class="formula task-f">cos α = (b² + c² − a²) / (2·b·c)</div>
+            <div class="formula task-f">α + β + γ = 180°</div>
+            <div class="formula task-f">a / sin α = b / sin β = c / sin γ</div>
+          </article>
+          <article class="task" id="hoehe">
+            <h3>Height of a triangle – from sides or an angle</h3>
+            <p>The height (altitude) is perpendicular to a side. If an angle is known, the sine is enough. If only the three sides are given, the area is calculated first and the height follows from it. DT-ProfiDreieck shows all three heights and draws them to scale.</p>
+            <div class="formula task-f">h<sub>c</sub> = b · sin α</div>
+            <div class="formula task-f">h<sub>c</sub> = 2 · A / c</div>
+          </article>
+        </div>
+        <div class="actions task-cta"><a class="button primary" href="https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html?lang=en">Calculate area, angles or height now →</a></div>
       </div>
     </section>
 
