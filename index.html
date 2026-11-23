@@ -90,6 +90,11 @@
           "availability": "https://schema.org/InStock",
           "url": "https://www.checkout-ds24.com/product/722585"
         }
+      ],
+      "featureList": [
+        "Fläche eines Dreiecks berechnen – auch ohne Höhe",
+        "Winkel im Dreieck berechnen – aus drei Seiten",
+        "Höhe eines Dreiecks berechnen – mit Seiten oder Winkel"
       ]
     }
   ]
@@ -216,6 +221,12 @@
     .langs { display:inline-flex; gap:4px; margin-left:14px; }
     .langs a { text-decoration:none; font-size:.8rem; font-weight:800; padding:3px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); }
     .langs a[aria-current="page"] { background:var(--cyan); border-color:var(--cyan); color:#062128; }
+    .task-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .task { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.035); }
+    .task p { color: var(--muted); font-size: .96rem; }
+    .task-f { font-size: 1.05rem; margin: 8px 0 0; overflow-wrap: anywhere; }
+    .task-cta { margin-top: 22px; }
+    @media (max-width: 780px) { .task-grid { grid-template-columns: 1fr; } }
 
   </style>
 </head>
@@ -297,6 +308,39 @@
             <p>Unmögliche oder widersprüchliche Eingaben werden erkannt und erläutert, unter anderem über die Euler-Ungleichung.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="content" id="aufgaben">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Typische Aufgaben</div>
+          <h2>Fläche, Winkel und Höhe eines Dreiecks berechnen</h2>
+          <p class="muted">Drei Fragen tauchen in Werkstatt, Konstruktion und Schule immer wieder auf. Hier sehen Sie die passenden Formeln – DT-ProfiDreieck wählt den Rechenweg automatisch und zeigt ihn Schritt für Schritt.</p>
+        </div>
+        <div class="task-grid">
+          <article class="task" id="flaeche">
+            <h3>Fläche eines Dreiecks berechnen – auch ohne Höhe</h3>
+            <p>Mit Grundseite und Höhe ist es einfach. Sind nur die drei Seiten bekannt, hilft die Heron-Formel; bei zwei Seiten und dem eingeschlossenen Winkel der Sinus. So lässt sich die Fläche auch für ein unregelmäßiges Dreieck ohne rechten Winkel bestimmen.</p>
+            <div class="formula task-f">A = ½ · c · h<sub>c</sub></div>
+            <div class="formula task-f">A = ½ · a · b · sin γ</div>
+            <div class="formula task-f">A = √(s·(s−a)·(s−b)·(s−c)), s = (a+b+c)/2</div>
+          </article>
+          <article class="task" id="winkel">
+            <h3>Winkel im Dreieck berechnen – aus drei Seiten</h3>
+            <p>Sind alle Seitenlängen gegeben, liefert der Kosinussatz jeden Winkel. Fehlt nur ein Winkel, reicht die Winkelsumme von 180°. Bei zwei Seiten und einem Winkel (SSW) prüft das Programm, ob es keine, eine oder zwei Lösungen gibt.</p>
+            <div class="formula task-f">cos α = (b² + c² − a²) / (2·b·c)</div>
+            <div class="formula task-f">α + β + γ = 180°</div>
+            <div class="formula task-f">a / sin α = b / sin β = c / sin γ</div>
+          </article>
+          <article class="task" id="hoehe">
+            <h3>Höhe eines Dreiecks berechnen – mit Seiten oder Winkel</h3>
+            <p>Die Höhe steht senkrecht auf einer Seite. Ist ein Winkel bekannt, genügt der Sinus. Sind nur die drei Seiten gegeben, wird zuerst die Fläche berechnet und daraus die Höhe. DT-ProfiDreieck zeigt alle drei Höhen und zeichnet sie maßstäblich ein.</p>
+            <div class="formula task-f">h<sub>c</sub> = b · sin α</div>
+            <div class="formula task-f">h<sub>c</sub> = 2 · A / c</div>
+          </article>
+        </div>
+        <div class="actions task-cta"><a class="button primary" href="https://dietertepe.github.io/test-dreieck/DT-ProfiDreieck_Test_1-1-0.html">Fläche, Winkel oder Höhe jetzt berechnen →</a></div>
       </div>
     </section>
 
