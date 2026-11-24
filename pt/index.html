@@ -221,7 +221,7 @@
     .langs { display:inline-flex; gap:4px; margin-left:14px; }
     .langs a { text-decoration:none; font-size:.8rem; font-weight:800; padding:3px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); }
     .langs a[aria-current="page"] { background:var(--cyan); border-color:var(--cyan); color:#062128; }
-    .task-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
     .task { padding: 22px; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.035); }
     .task p { color: var(--muted); font-size: .96rem; }
     .task-f { font-size: 1.05rem; margin: 8px 0 0; overflow-wrap: anywhere; }
